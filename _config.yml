@@ -7,9 +7,9 @@ relative_permalinks: true
 # Setup
 title:               Dragon Knight
 tagline:             on Boulderfist
-url:                 http://dk.chapley.com
+url:                 http://tjchap2840.github.io
 paginate:            1
-baseurl:             /dragonknight
+baseurl:             /dragonknight/
 
 # Assets
 #
@@ -25,6 +25,6 @@ author:
   email:             tj@chapley.com
 
 # Custom vars
-version:             1.0.3
+version:             1.0.4
 github:
   repo:              https://github.com/tjchap2840/dragonknight
