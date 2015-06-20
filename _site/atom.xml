@@ -4,7 +4,7 @@
  <title>Dragon Knight</title>
  <link href="http://dk.chapley.com//atom.xml" rel="self"/>
  <link href="http://dk.chapley.com/"/>
- <updated>2015-06-20T17:35:39-04:00</updated>
+ <updated>2015-06-20T17:41:38-04:00</updated>
  <id>http://dk.chapley.com</id>
  <author>
    <name>TJ Chapley</name>
@@ -14,16 +14,11 @@
  
  <entry>
    <title>Getting to Hellfire Citadel</title>
-   <link href="http://dk.chapley.com///2015/06/20/-getting-to-hfc/"/>
+   <link href="http://dk.chapley.com///2015/06/20/getting-to-hfc/"/>
    <updated>2015-06-20T00:00:00-04:00</updated>
-   <id>http://dk.chapley.com/2015/06/20/-getting-to-hfc</id>
+   <id>http://dk.chapley.com/2015/06/20/getting-to-hfc</id>
    <content type="html">&lt;p&gt;Here is how to get to Hellfire Citadel.&lt;/p&gt;
 &lt;iframe src=&quot;http://gfycat.com/ifr/DearLavishCassowary&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; width=&quot;640&quot; height=&quot;360&quot; style=&quot;-webkit-backface-visibility: hidden;-webkit-transform: scale(1);&quot;&gt;&lt;/iframe&gt;
-&lt;!-- [Jekyll](http://jekyllrb.com) is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From [the project&#39;s readme](https://github.com/jekyll/jekyll/blob/master/README.markdown):
-
-&gt; Jekyll is a simple, blog aware, static site generator. It takes a template directory [...] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.
-
-It&#39;s an immensely useful tool. Find out more by [visiting the project on GitHub](https://github.com/jekyll/jekyll). --&gt;
 </content>
  </entry>
  
