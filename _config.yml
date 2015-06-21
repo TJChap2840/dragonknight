@@ -9,7 +9,7 @@ title:               Dragon Knight
 tagline:             on Boulderfist
 url:                 http://dk.chapley.com
 paginate:            1
-baseurl:             /
+baseurl:             ""
 
 # Assets
 #
