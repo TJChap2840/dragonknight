@@ -9,6 +9,6 @@ I am working on Best in Slot lists for everybody in our raid group. These lists 
 
 There will also be a tier priority as some people get much more value out of their tier bonuses than others do (RIP Fury Warrior). This also applies to class trinkets.
 
-[ClICK HERE](https://docs.google.com/spreadsheets/d/1FCbNn8aB1Mdt8Ng2cr2bADo9W0NMtvm8tWmyYtKEbFM/edit#gid=0) for the Google Doc.
+[CLICK HERE](https://docs.google.com/spreadsheets/d/1FCbNn8aB1Mdt8Ng2cr2bADo9W0NMtvm8tWmyYtKEbFM/edit#gid=0) for the Google Doc.
 
 Talk to Brisp if you have any questions.
