@@ -30,26 +30,9 @@ raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Ere
                     if (obj.members[yndex].character.class == "9") { document.getElementById("specClass" + id).innerHTML += "Warlock"; }
                     if (obj.members[yndex].character.class == "10") { document.getElementById("specClass" + id).innerHTML += "Monk"; }
                     if (obj.members[yndex].character.class == "11") { document.getElementById("specClass" + id).innerHTML += "Druid"; }
-
-             
-
                 }
             }
         }
-
-            // document.getElementById("avatar").src = "https://us.battle.net/static-render/us/" + obj.thumbnail;
-            // document.getElementById("currentName").innerHTML = obj.name;
-
-            // if (obj.talents[0].selected) {
-            //     document.getElementById("currentSpecClass").innerHTML = obj.talents[0].spec.name;
-            //     obj.talents
-            // } else {
-
-            // }
-
-            // if (obj.class == "10") { obj.class = "Monk"; }
-            // document.getElementById("currentSpecClass").innerHTML += " " + obj.class;
-        // document.getElementById("name" +  obj.name).innerHTML = obj.name;
 
     }
     window.onload = function() {
@@ -73,15 +56,3 @@ raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Ere
         </div>
     {% endfor %}
 </div>
-
-<!-- <div class="post-container">                
-    <div class="post-thumb">
-        <img id="avatar"></img>
-    </div>
-    <div class="post-content">
-        <h3 class="post-title" id="currentName"></h3>
-        <a href="http://us.battle.net/wow/en/character/boulderfist/Bigchap/simple">
-            <p id="currentSpecClass"></p>
-        </a>
-    </div>
-</div> -->
