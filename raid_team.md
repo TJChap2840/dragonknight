@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Raid Team
-raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Eredesse", "Dragonheart", "Evgenimalkin", "Maknasty", "Wootman", "Cimba", "Flarez", "Irregularity", "Crians", "Shiftless"]
+raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Eredesse", "Dragonheart", "Evgenimalkin", "Maknasty", "Wootman", "Cimba", "Flarez", "Irregularity", "Crians", "Shiftless", "Nitethief", "Pookah", "Varos", "Vertueux"]
 ---
 
 {% assign sorted_raiders = page.raiders | sort %}
@@ -9,15 +9,15 @@ raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Ere
 <script type="text/javascript" id="myjsonp"></script>
 <script type="text/javascript">
     function getToon(obj) {
-        var raiders = ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Eredesse", "Dragonheart", "Evgenimalkin", "Maknasty", 
-                        "Wootman", "Cimba", "Flarez", "Irregularity", "Crians", "Shiftless"];
+        var raiders = ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Eredesse", "Dragonheart", "Evgenimalkin", "Maknasty", "Wootman", "Cimba", "Flarez", "Irregularity", "Crians", "Shiftless", "Nitethief", "Pookah", "Varos", "Vertueux"];
         for (var index = 0; index < raiders.length; index++) {
             for (var yndex = 0; yndex < obj.members.length; yndex++) {
                 if (raiders[index] == obj.members[yndex].character.name) {
                     var id = raiders[index];
                     document.getElementById("avatar" + id).src = "https://us.battle.net/static-render/us/" + obj.members[yndex].character.thumbnail;
-                    document.getElementById("name" + id).innerHTML = obj.members[yndex].character.name;
+                    document.getElementById("name" + id).innerHTML = id;
                     document.getElementById("specClass" + id).innerHTML = obj.members[yndex].character.spec.name + " ";
+                    document.getElementById("armory" + id).href = "http://us.battle.net/wow/en/character/" + obj.members[yndex].character.realm + "/" + id + "/simple";
 
                     if (obj.members[yndex].character.class == "1") { document.getElementById("specClass" + id).innerHTML += "Warrior"; }
                     if (obj.members[yndex].character.class == "2") { document.getElementById("specClass" + id).innerHTML += "Paladin"; }
@@ -41,16 +41,19 @@ raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Ere
     }
 </script>
 
-{% for raider in sorted_raiders %}
-<div class="col-md-8 col-md-offset-2">                
-    <div>
-        <img id="avatar{{ raider }}"></img>
-    </div>
-    <div>
-        <h3 class="post-title" id="name{{ raider }}"></h3>
-        <a id="armory{{ raider}}" href="http://us.battle.net/wow/en/character/boulderfist/Bigchap/simple">
-            <p id="specClass{{ raider }}">{{ raider }}</p>
-        </a>
+<div class="panel panel-default">
+    <div class="panel-heading"><h1 class="panel-title">Raid Team</h1></div>
+    <table class="table">
+        <tbody>
+        {% for raider in sorted_raiders %}
+            <tr>
+                <td><img id="avatar{{ raider }}" width="25px" height="25px" align="center"></img></td>
+                <td id="name{{ raider }}"></td>
+                <td id="specClass{{ raider }}"></td>
+                <td><a id="armory{{ raider }}" class="btn-sm btn-success" role="button">Armory</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
     </div>
 </div>
-{% endfor %}
