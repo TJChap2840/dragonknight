@@ -15,7 +15,12 @@ raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Ere
                 if (raiders[index] == obj.members[yndex].character.name) {
                     var id = raiders[index];
                     document.getElementById("avatar" + id).src = "https://us.battle.net/static-render/us/" + obj.members[yndex].character.thumbnail;
-                    document.getElementById("name" + id).innerHTML = id;
+
+                    if (id == "Tresane") {
+                        document.getElementById("name" + id).innerHTML = "(best resto NA) " + id;
+                    } else {
+                        document.getElementById("name" + id).innerHTML = id;
+                    }
                     document.getElementById("specClass" + id).innerHTML = obj.members[yndex].character.spec.name + " ";
                     document.getElementById("armory" + id).href = "http://us.battle.net/wow/en/character/" + obj.members[yndex].character.realm + "/" + id + "/simple";
 
