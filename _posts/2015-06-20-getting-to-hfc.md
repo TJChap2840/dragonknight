@@ -3,7 +3,7 @@ layout: post
 title: Getting to Hellfire Citadel
 ---
 
-Here is how to get to Hellfire Citadel.
+<p>Here is how to get to Hellfire Citadel.</p>
 <img class="gfyitem" data-id="DearLavishCassowary" data-perimeter="false" data-control="false"/>
 <script>
  (function(d, t) {

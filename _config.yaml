@@ -1,0 +1,15 @@
+name: "Dragon Knight"
+description: "Dragon Knight on Boulderfist"
+url: http://localhost:4000
+
+paginate: 3
+
+permalink: pretty
+relative_permalinks: true
+
+markdown: rdiscount
+highlighter: pygments
+
+pages_list:       
+  About: '/about/'
+  Archive: '/archive/'

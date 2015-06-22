@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Team
+title: Raid Team
 raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Eredesse", "Dragonheart", "Evgenimalkin", "Maknasty", "Wootman", "Cimba", "Flarez", "Irregularity", "Crians", "Shiftless"]
 ---
 
@@ -41,18 +41,16 @@ raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Ere
     }
 </script>
 
-<div id="teamContainer">
-    {% for raider in sorted_raiders %}
-        <div class="post-container">                
-            <div class="post-thumb">
-                <img id="avatar{{ raider }}"></img>
-            </div>
-            <div class="post-content">
-                <h3 class="post-title" id="name{{ raider }}"></h3>
-                <a id="armory{{ raider}}" href="http://us.battle.net/wow/en/character/boulderfist/Bigchap/simple">
-                    <p id="specClass{{ raider }}">{{ raider }}</p>
-                </a>
-            </div>
-        </div>
-    {% endfor %}
+{% for raider in sorted_raiders %}
+<div class="col-md-8 col-md-offset-2">                
+    <div>
+        <img id="avatar{{ raider }}"></img>
+    </div>
+    <div>
+        <h3 class="post-title" id="name{{ raider }}"></h3>
+        <a id="armory{{ raider}}" href="http://us.battle.net/wow/en/character/boulderfist/Bigchap/simple">
+            <p id="specClass{{ raider }}">{{ raider }}</p>
+        </a>
+    </div>
 </div>
+{% endfor %}
