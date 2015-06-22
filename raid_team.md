@@ -58,6 +58,12 @@ raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Ere
                 <td><a id="armory{{ raider }}" class="btn-sm btn-success" role="button">Armory</a></td>
             </tr>
         {% endfor %}
+            <tr>
+                <td></td>
+                <td id="nameShadowy">Shadowy</td>
+                <td id="specClassShadowy">Shadowy Apparitions</td>
+                <td><a id="armoryShadowy" href="/shadowy/" class="btn-sm btn-success" role="button">Armory</a></td>
+            </tr>
         </tbody>
     </table>
     </div>
