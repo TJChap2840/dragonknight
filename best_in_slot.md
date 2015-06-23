@@ -772,7 +772,8 @@ specs:
   {% for node in page.specs %}
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="heading{{ node.spec }}">
-      <h4 class="panel-title">
+      <img src="/img/{{ node.spec }}_{{ node.class }}.png"></img>
+      <h4 class="panel-title pull-right">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ node.spec }}" aria-expanded="true" aria-controls="collapse{{ node.spec }}">{{ node.spec }} {{ node.class }}</a>
       </h4>
     </div>
