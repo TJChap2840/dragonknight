@@ -12,6 +12,14 @@
           {% endif %}
         {% endif %}  
       {% endfor %}
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" roles="botton" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          {% for resource in site.resource_list %}
+            <li><a href="{{ resource[1] }}">{{ resource[0] }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="navbar-brand">Happy Birthday Marsh</li>

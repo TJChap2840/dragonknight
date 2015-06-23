@@ -3,9 +3,8 @@ layout: post
 title: Getting to Hellfire Citadel
 ---
 
-<div class="embed-responsive embed-responsive-16by9">
-  <img class="gfyitem" data-id="DearLavishCassowary" data-perimeter="false" data-control="false" class="embed-responsive-item" />
-</div>
+
+<p class="gif"><img class="gfyitem gif" data-id="DearLavishCassowary" data-perimeter="false" data-control="false"/></p>
 <script>
  (function(d, t) {
     var g = d.createElement(t),
