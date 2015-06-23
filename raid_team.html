@@ -17,7 +17,7 @@ raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Ere
                     document.getElementById("avatar" + id).src = "https://us.battle.net/static-render/us/" + obj.members[yndex].character.thumbnail;
 
                     if (id == "Tresane") {
-                        document.getElementById("name" + id).innerHTML = "(best resto NA) " + id;
+                        document.getElementById("name" + id).innerHTML = id + " (best resto NA)" ;
                     } else {
                         document.getElementById("name" + id).innerHTML = id;
                     }
@@ -46,6 +46,7 @@ raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Ere
     }
 </script>
 
+<div class="row col-md-8 col-md-offset-2">
 <div class="panel panel-default">
     <div class="panel-heading"><h1 class="panel-title">Raid Team</h1></div>
     <table class="table">
@@ -67,4 +68,5 @@ raiders: ["Bigchap", "Zomgqq", "Alastar", "Tresane", "Cptkrunk", "Skifree", "Ere
         </tbody>
     </table>
     </div>
+</div>
 </div>

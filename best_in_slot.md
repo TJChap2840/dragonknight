@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: resources
 title: Best in Slot
 specs:
 - spec: Arcane
@@ -766,15 +766,14 @@ specs:
     url: http://ptr.wowhead.com/item=124380/spur-of-the-great-devourer
 ---
 
-<div class="row">
-<div class="col-md-4 col-md-offset-4">
+
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   {% for node in page.specs %}
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="heading{{ node.spec }}">
+    <div class="panel-heading clickable" role="tab button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ node.spec }}" id="heading{{ node.spec }}" aria-expanded="true" aria-controls="collapse{{ node.spec }}">
       <img src="/img/{{ node.spec }}_{{ node.class }}.png" width="30px" height="30px"></img>
       <h4 class="panel-title pull-right">
-        <a class="vcenter" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ node.spec }}" aria-expanded="true" aria-controls="collapse{{ node.spec }}">{{ node.spec }} {{ node.class }}</a>
+        <p class="vcenter">{{ node.spec }} {{ node.class }}</p>
       </h4>
     </div>
     <div id="collapse{{ node.spec }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ node.spec }}">
@@ -791,17 +790,4 @@ specs:
     </div>
   </div>
   {% endfor %}
-  <!-- <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Balance Druid</a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-      <tbody>
-      </tbody>
-    </div>
-  </div> -->
-</div>
-</div>
 </div>

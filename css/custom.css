@@ -3,7 +3,9 @@
 }
 
 .vcenter {
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
+  padding-top: 5px;
+}
+
+.disabled {
+  color: #000000;
 }
