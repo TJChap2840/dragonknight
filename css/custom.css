@@ -1,3 +1,9 @@
 .gif {
   text-align: center;
 }
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}

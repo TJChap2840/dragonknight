@@ -767,14 +767,14 @@ specs:
 ---
 
 <div class="row">
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-4 col-md-offset-4">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   {% for node in page.specs %}
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="heading{{ node.spec }}">
-      <img src="/img/{{ node.spec }}_{{ node.class }}.png"></img>
+      <img src="/img/{{ node.spec }}_{{ node.class }}.png" width="30px" height="30px"></img>
       <h4 class="panel-title pull-right">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ node.spec }}" aria-expanded="true" aria-controls="collapse{{ node.spec }}">{{ node.spec }} {{ node.class }}</a>
+        <a class="vcenter" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ node.spec }}" aria-expanded="true" aria-controls="collapse{{ node.spec }}">{{ node.spec }} {{ node.class }}</a>
       </h4>
     </div>
     <div id="collapse{{ node.spec }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ node.spec }}">
