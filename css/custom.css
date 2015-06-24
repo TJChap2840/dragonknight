@@ -6,6 +6,10 @@
   padding-top: 5px;
 }
 
-.disabled {
-  color: #000000;
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background-color: #e3e3e3;
 }
