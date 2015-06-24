@@ -4,12 +4,5 @@ title: Getting to Hellfire Citadel
 ---
 
 
-<p class="gif"><img class="gfyitem gif" data-id="DearLavishCassowary" data-perimeter="false" data-control="false"/></p>
-<script>
- (function(d, t) {
-    var g = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-    g.src = 'http://assets.gfycat.com/js/gfyajax-0.517d.js';
-    s.parentNode.insertBefore(g, s);
-}(document, 'script'));
-</script>
+<p class="gif"><img class="gfyitem gif" data-id="DearLavishCassowary" data-dot="false" data-perimeter="false" data-control="false"/></p>
+<script id="gfy" type="text/javascript" src="http://assets.gfycat.com/js/gfyajax-0.517d.js"></script>

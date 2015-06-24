@@ -3,30 +3,19 @@ layout: default
 title: Home
 ---
 
-<script type="text/javascript">
-  $.get("http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5",
-        function (data) {
-          $(data).fine("item").each(function () {
-            var newsItem = $(this);
-
-            console.log("Title:  " + newsItem.find("title").text());
-          });
-        });
-</script> 
-
-
-
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <div class="list-group">
-      <span class="list-group-item"><b>MMO Champion News</b></span>
-      {% assign array = [0,1,2,3,4] %}
-      {% for item in array %}      
-      <a id="mmoc{{ item }}" class="list-group-item"></a>
-      {% endfor %}
-    </div>
+    <div class="list-group col-md-6" id="mmoc">
+  </div>
   </div>
 </div>
+
+<script type="text/javascript">
+$(function(){
+  // running custom RSS functions
+  parseRSS('http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5', '#mmoc');
+});
+</script>
 
 {% for post in paginator.posts %}
 <div class="row">
