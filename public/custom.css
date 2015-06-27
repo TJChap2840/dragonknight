@@ -13,3 +13,8 @@
 .clickable:hover {
   background-color: #e3e3e3;
 }
+
+.thumbnail img { 
+  min-height: 150px; height: 150px;
+  /*min-width: 100px; width: 100px; */
+}

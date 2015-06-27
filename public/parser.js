@@ -42,7 +42,7 @@ function parseAPI(url, container) {
     // a preflight. If you set this value to anything other than
     // application/x-www-form-urlencoded, multipart/form-data, or text/plain,
     // you will trigger a preflight request.
-    contentType: 'application/json',
+    // contentType: 'application/json',
 
     xhrFields: {
       // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
@@ -67,10 +67,10 @@ function parseAPI(url, container) {
     },
 
     error: function(data) {
-      console.log(data.toString());
-      for (var obj in data) {
-        console.log(obj + "=" + data[obj]);
-      }
+      // for (var obj in data) {
+      //   console.log(obj + "=" + data[obj]);
+      // }
+      alert("error");
       // Here's where you handle an error response.
       // Note that if the error was due to a CORS issue,
       // this function will still fire, but there won't be any additional
