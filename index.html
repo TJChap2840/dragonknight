@@ -9,13 +9,13 @@ title: Home
     <!-- <div class="list-group" id="wclogs"></div> -->
   </div>
 
-<script type="text/javascript">
-$(function(){
-  // running custom RSS functions
-  parseRSS('http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5', '#mmoc');
-  // parseAPI('https://www.warcraftlogs.com:443/v1/reports/guild/Dragon%20Knight/Boulderfist/US?api_key=4e6b85c57f6b99e30c1e296575957e12', "#wclogs");
-});
-</script>
+  <script type="text/javascript">
+  $(function(){
+    // running custom RSS functions
+    parseRSS('http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5', '#mmoc');
+    // parseAPI('https://www.warcraftlogs.com:443/v1/reports/guild/Dragon%20Knight/Boulderfist/US?api_key=4e6b85c57f6b99e30c1e296575957e12', "#wclogs");
+  });
+  </script>
 
   <div class="col-md-8">
   {% for post in paginator.posts %}
@@ -35,6 +35,22 @@ $(function(){
       </div>
     </div>
   {% endfor %}
+
+    <div>
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default" role="button">Older</a>
+      {% else %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default disabled" role="button">Older</a>
+      {% endif %}
+      
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default" role="button">Newer</a>
+      {% else %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default disabled" role="button">Newer</a>
+      {% endif %}
+
+      </button>
+    </div>
   </div>
 </div>
 
