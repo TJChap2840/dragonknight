@@ -1,5 +1,5 @@
 ---
-<!-- layout: page -->
+layout: page
 title: Pictures
 ---
 <!-- 
@@ -50,8 +50,11 @@ title: Pictures
 
 <div id="links">
     {% for image in site.data.images %}
-    <a href="https://dl.dropboxusercontent.com/u/9039389/{{ image.img }}" data-gallery>
+    <!-- <a href="https://dl.dropboxusercontent.com/u/9039389/{{ image.img }}" data-gallery>
       <img src="https://dl.dropboxusercontent.com/u/9039389/{{ image.img }}" width="128" height="72">
+    </a> -->
+    <a href="http://i.imgur.com/{{ image.img }}.jpg" data-gallery>
+      <img src="http://i.imgur.com/{{ image.img }}s.jpg">
     </a>
     {% endfor %}
     <!-- <a href="images/banana.jpg" title="Banana" data-gallery>
