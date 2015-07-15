@@ -1,8 +1,8 @@
 ---
-layout: page
+<!-- layout: page -->
 title: Pictures
 ---
-
+<!-- 
 <div class="col-md-10 col-md-offset-1">
   {% for image in site.data.images %}
     <div class="col-md-3">
@@ -11,9 +11,62 @@ title: Pictures
       </a>
     </div>
   {% endfor %}
+</div> -->
+
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<script>
+
+<div id="links">
+    {% for image in site.data.images %}
+    <a href="https://dl.dropboxusercontent.com/u/9039389/{{ image.img }}" data-gallery>
+      <img src="https://dl.dropboxusercontent.com/u/9039389/{{ image.img }}" width="128" height="72">
+    </a>
+    {% endfor %}
+    <!-- <a href="images/banana.jpg" title="Banana" data-gallery>
+        <img src="images/thumbnails/banana.jpg" alt="Banana">
+    </a>
+    <a href="images/apple.jpg" title="Apple" data-gallery>
+        <img src="images/thumbnails/apple.jpg" alt="Apple">
+    </a>
+    <a href="images/orange.jpg" title="Orange" data-gallery>
+        <img src="images/thumbnails/orange.jpg" alt="Orange">
+    </a> -->
+</div>
+
+
+<!-- <script>
   $(document).ready(function(){
     $("a[rel^='prettyPhoto']").prettyPhoto({
       // allow_resize: false, /* Resize the photos bigger than viewport. true/false */
@@ -27,4 +80,4 @@ title: Pictures
       social_tools: ''
     });
   });
-</script>
+</script> -->
