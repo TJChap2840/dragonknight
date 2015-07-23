@@ -2,16 +2,6 @@
 layout: page
 title: Pictures
 ---
-<!-- 
-<div class="col-md-10 col-md-offset-1">
-  {% for image in site.data.images %}
-    <div class="col-md-3">
-      <a href="/img/gallery/{{ image.img }}" rel="prettyPhoto[group]" class="thumbnail">
-        <img class="group1" src="/img/gallery/{{ image.img }}"></img>
-      </a>
-    </div>
-  {% endfor %}
-</div> -->
 
 <div id="blueimp-gallery" class="blueimp-gallery">
     <!-- The container for the modal slides -->
@@ -50,37 +40,8 @@ title: Pictures
 
 <div id="links">
     {% for image in site.data.images %}
-    <!-- <a href="https://dl.dropboxusercontent.com/u/9039389/{{ image.img }}" data-gallery>
-      <img src="https://dl.dropboxusercontent.com/u/9039389/{{ image.img }}" width="128" height="72">
-    </a> -->
     <a href="http://i.imgur.com/{{ image.img }}.jpg" data-gallery>
       <img src="http://i.imgur.com/{{ image.img }}s.jpg">
     </a>
     {% endfor %}
-    <!-- <a href="images/banana.jpg" title="Banana" data-gallery>
-        <img src="images/thumbnails/banana.jpg" alt="Banana">
-    </a>
-    <a href="images/apple.jpg" title="Apple" data-gallery>
-        <img src="images/thumbnails/apple.jpg" alt="Apple">
-    </a>
-    <a href="images/orange.jpg" title="Orange" data-gallery>
-        <img src="images/thumbnails/orange.jpg" alt="Orange">
-    </a> -->
 </div>
-
-
-<!-- <script>
-  $(document).ready(function(){
-    $("a[rel^='prettyPhoto']").prettyPhoto({
-      // allow_resize: false, /* Resize the photos bigger than viewport. true/false */
-      counter_separator_label: ' of ', /* The separator for the gallery counter 1 "of" 2 */
-      // theme: 'dark_rounded', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
-      // horizontal_padding: 20, /* The padding on each side of the picture */
-      // overlay_gallery: true, /* If set to true, a gallery will overlay the fullscreen image on mouse over */
-      // keyboard_shortcuts: true, /* Set to false if you open forms inside prettyPhoto */
-      // changepicturecallback: function(){}, /* Called everytime an item is shown/changed */
-      // callback: function(){}, /* Called when prettyPhoto is closed */
-      social_tools: ''
-    });
-  });
-</script> -->

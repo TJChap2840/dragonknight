@@ -2,18 +2,20 @@
 layout: default
 title: Home
 ---
+{% include comment_count.html %}
 <div class="main">
   <div class="row">
   <div class="col-md-4 sidebar">
-    <div class="list-group" id="mmoc"></div>
+    <div class="list-group" id="news"></div>
     <!-- <div class="list-group" id="wclogs"></div> -->
   </div>
 
   <script type="text/javascript">
   $(function(){
     // running custom RSS functions
-    parseRSS('http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5', '#mmoc');
-    // parseAPI('https://www.warcraftlogs.com:443/v1/reports/guild/Dragon%20Knight/Boulderfist/US?api_key=4e6b85c57f6b99e30c1e296575957e12', "#wclogs");
+    // parseRSS('http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5', '#mmoc');
+    // parseAPI('#logs');
+    sideBar('#news');
   });
   </script>
 
@@ -27,7 +29,9 @@ title: Home
               {{ post.title }}
             </a>
           </h1>
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }} • </time>
+          <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a>
         </div>
         <div class="panel-body">
           {{ post.content }}
@@ -52,6 +56,6 @@ title: Home
       </button>
     </div>
   </div>
-</div>
+  </div>
 </div>
 
