@@ -1,0 +1,35 @@
+---
+layout: page
+title: Raid Team
+---
+
+{% assign sorted_raiders = site.data.raid_team | sort: 'name' %}
+
+<script type="text/javascript" id="myjsonp"></script>
+<script src="/public/raid_team.js.liquid"></script>
+
+
+<div class="row col-md-8 col-md-offset-2">
+<div class="panel panel-default">
+    <div class="panel-heading"><h1 class="panel-title">Raid Team</h1></div>
+    <table class="table">
+        <tbody>
+        {% for raider in sorted_raiders %}
+            <tr>
+                <td><img id="avatar{{ raider.name }}" width="25px" height="25px" align="center"></img></td>
+                <td id="name{{ raider.name }}"></td>
+                <td id="specClass{{ raider.name }}"></td>
+                <td><a id="armory{{ raider.name }}" class="btn-sm btn-success" role="button">Armory</a></td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td></td>
+                <td id="nameShadowy">Shadowy</td>
+                <td id="specClassShadowy">Shadowy Apparitions</td>
+                <td><a id="armoryShadowy" href="/shadowy/" class="btn-sm btn-success" role="button">Armory</a></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>
