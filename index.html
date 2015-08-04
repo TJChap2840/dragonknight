@@ -4,41 +4,67 @@ title: Home
 ---
 {% include comment_count.html %}
 <div class="main">
-  <div class="row">
-  <div class="col-md-4 sidebar">
-    <div class="list-group" id="news"></div>
-    <!-- <div class="list-group" id="wclogs"></div> -->
-  </div>
-
-  <script type="text/javascript">
-  $(function(){
-    // running custom RSS functions
-    // parseRSS('http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5', '#mmoc');
-    // parseAPI('#logs');
-    sideBar('#news');
-  });
-  </script>
-
-  <div class="col-md-8">
-  {% for post in paginator.posts %}
-    <div class="panel-group">
-      <div class="panel panel-default">
-        <div class="panel-heading"> 
-          <h1 class="panel-title">
-            <a href="{{ post.url }}">
-              {{ post.title }}
-            </a>
-          </h1>
-
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }} • </time>
-          <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a>
-        </div>
-        <div class="panel-body">
-          {{ post.content }}
-        </div>
+  <!-- <div class="row">
+    <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Panel heading without title</div>
+      <div class="panel-body">
+        Panel content
       </div>
     </div>
-  {% endfor %}
+    </div>
+    <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Panel heading without title</div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Panel heading without title</div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+    </div>
+  </div> -->
+  <div class="row">
+    <div class="col-md-4 sidebar">
+      <div class="list-group" id="news"></div>
+      <!-- <div class="list-group" id="wclogs"></div> -->
+    </div>
+
+    <script type="text/javascript">
+      $(function(){
+        // running custom RSS functions
+        // parseRSS('http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5', '#mmoc');
+        // parseAPI('#logs');
+        sideBar('#news');
+      });
+    </script>
+
+    <div class="col-md-8">
+    {% for post in paginator.posts %}
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"> 
+            <h1 class="panel-title">
+              <a href="{{ post.url }}">
+                {{ post.title }}
+              </a>
+            </h1>
+
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }} • </time>
+            <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a>
+          </div>
+          <div class="panel-body">
+            {{ post.content }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
 
     <div>
       {% if paginator.next_page %}
