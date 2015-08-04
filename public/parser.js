@@ -16,9 +16,47 @@ function sideBar(container) {
         var raid = raids[i];
         var title = raid.title;
         var report_url = report_base + raid.id;
-        // var fight_url = base_url + '/report/fights/' + raid.id + '?api_key=' + api_key;
-        var thehtml = "<a href='" + report_url + "' target=_blank' class='list-group-item'>" + title + "</a>";
+        var date = new Date(raid.start);
+        
+        var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        var dayOfTheWeek = days[date.getDay()];
+        // alert(dayOfTheWeek);
+        var fight_url = base_url + '/report/fights/' + raid.id + '?api_key=' + api_key;
+        // alert(fight_url);
+        var thehtml = "<a href='" + report_url + "' target=_blank' class='list-group-item'>" + title + " • " + dayOfTheWeek + "</a>";
         $(container).append(thehtml);
+        
+        
+        // $.ajax({
+        //   url: fight_url,
+        //   dataType: 'json',
+        //   success: function (data) {
+        //     var fight_text = " • ";
+        //     var kills = [];
+        //     var wipes = [];
+        //     for (var i = 0; i < data.fights.length; i++) {
+        //       var fight = data.fights[i];
+        //       if (fight.kill) {
+        //         kills.push(fight);
+        //       } else {
+        //         wipes.push(fight);
+        //       }
+        //     }
+        //     if (kills.length > 0) {
+        //       fight_text += kills.length + ' kill' + (kills.length > 1 ? 's' : '');
+        //       if (wipes.length > 0) {
+        //         fight_text += ' : ';
+        //       }
+        //     }
+
+        //     if (wipes.length > 0) {
+        //       fight_text += wipes.length + ' wipe' + (wipes.length > 1 ? 's' : '');
+        //     }
+        //     // var thehtml = "<a href='" + report_url + "' target=_blank' class='list-group-item'>" + title + " • " + dayOfTheWeek;
+        //     fight_text += "</a>";
+        //     $(container).append(fight_text);
+        //   }
+        // });
       };
     },
     error: function() {
