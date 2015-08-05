@@ -4,44 +4,37 @@ title: Home
 ---
 {% include comment_count.html %}
 <div class="main">
+
   <div class="alert alert-danger" role="alert"><a href="/log_guide/"><b>Click here!</b></a> "How Bad Am I?" guide</div>
-  <!-- <div class="row">
-    <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">Panel heading without title</div>
-      <div class="panel-body">
-        Panel content
-      </div>
-    </div>
-    </div>
-    <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">Panel heading without title</div>
-      <div class="panel-body">
-        Panel content
-      </div>
-    </div>
-    </div>
-    <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">Panel heading without title</div>
-      <div class="panel-body">
-        Panel content
-      </div>
-    </div>
-    </div>
-  </div> -->
+
   <div class="row">
-    <div class="col-md-4 sidebar">
-      <div class="list-group" id="news"></div>
-      <!-- <div class="list-group" id="wclogs"></div> -->
+    <div class="col-md-4">
+      <div class="sidebar">
+        <div class="list-group">
+          <span class="list-group-item"><b>Recent Raid Logs</b></span>
+          {% for i in (1..5) %}
+            <a id="link{{ i }}" class="list-group-item">
+              <div id="title{{ i }}"></div>
+              <div class="row">
+                <div id="day{{ i }}" class="col-md-6"></div>
+                <div id="stats{{ i }}" class="col-md-6"></div>  
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="list-group">
+          <span class="list-group-item"><b>MMO Champion Latest News</b></span>
+          {% for i in (1..5) %}
+            <a class="list-group-item" id="mmo{{ i }}">Test</a>
+          {% endfor %}
+        </div>
+      </div>
     </div>
 
     <script type="text/javascript">
       $(function(){
-        // running custom RSS functions
-        // parseRSS('http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5', '#mmoc');
-        // parseAPI('#logs');
         sideBar('#news');
       });
     </script>
