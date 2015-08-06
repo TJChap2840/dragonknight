@@ -29,31 +29,32 @@ function sideBar(container) {
         var fight_url = base_url + '/report/fights/' + raid.id + '?api_key=' + api_key;
 
         var div = $("#stats" + counter);
-    
+        
         $.ajax({
           url: fight_url,
           dataType: 'json',
           success: function (data) {
-            var kills = [];
-            var wipes = [];
-            for (var i = 0; i < data.fights.length; i++) {
-              var fight = data.fights[i];
-              if (fight.kill) {
-                kills.push(fight);
-              } else {
-                wipes.push(fight);
-              }
-            }
-            if (kills.length > 0) {
-              div.append($("<span></span>").text(kills.length + 'k'));
-              if (wipes.length > 0) {
-                div.append($("<span></span>").text('/'));
-              }
-            }
+            // div.append($("<span></span>")).text(counter);
+            // var kills = [];
+            // var wipes = [];
+            // for (var i = 0; i < data.fights.length; i++) {
+            //   var fight = data.fights[i];
+            //   if (fight.kill) {
+            //     kills.push(fight);
+            //   } else {
+            //     wipes.push(fight);
+            //   }
+            // }
+            // if (kills.length > 0) {
+            //   div.append($("<span></span>").text(kills.length + 'k'));
+            //   if (wipes.length > 0) {
+            //     div.append($("<span></span>").text('/'));
+            //   }
+            // }
 
-            if (wipes.length > 0) {
-              div.append($("<span></span>").text(wipes.length + 'w'));
-            }
+            // if (wipes.length > 0) {
+            //   div.append($("<span></span>").text(wipes.length + 'w'));
+            // }
           }
         });
       };
