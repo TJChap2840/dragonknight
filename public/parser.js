@@ -80,6 +80,40 @@ function sideBar(container) {
       });
     }
   });
+}
 
-  
+function checkHitbox(container, player, url) {
+  $.ajax({
+    url: url,
+    dataType: 'json',
+    success: function(data) {
+      var status = "OFFLINE";
+      document.getElementById(container).style.background = "#ffe5e5";
+      if (data.media_is_live == 1) {
+        status = "LIVE";
+        document.getElementById(container).style.background = "#c5ecc5";
+      }
+      document.getElementById(container + "Status").innerHTML = status;
+      // alert("success")
+    },
+    error: function(data) {
+      alert("error");
+    }
+  })
+}
+
+function checkTwitch(container) {
+  $.ajax({ 
+    url:'https://api.twitch.tv/kraken/streams/damituswow',
+    dataType:'jsonp',
+    success: function(channel) { 
+      status = "OFFLINE";
+      document.getElementById(container).style.background = "#ffe5e5";
+      if (channel.stream != null) {
+        status = "LIVE";
+        document.getElementById(container).style.background = "#c5ecc5";
+      }
+      document.getElementById(container + "Status").innerHTML  = status
+    }
+ });
 }

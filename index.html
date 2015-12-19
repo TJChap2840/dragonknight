@@ -8,7 +8,7 @@ title: Home
   <div class="alert alert-danger" role="alert"><a href="/log_guide/"><b>Click here!</b></a> "How Bad Am I?" guide -- Now with <a href="/learn_your_class/">Part 2</a></div>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="sidebar">
         <div class="list-group">
           <span class="list-group-item"><b>Recent Raid Logs</b></span>
@@ -39,8 +39,8 @@ title: Home
       });
     </script>
 
-    <div class="col-md-8">
-    {% for post in paginator.posts %}
+    <div class="col-md-6">
+      {% for post in paginator.posts %}
       <div class="panel-group">
         <div class="panel panel-default">
           <div class="panel-heading"> 
@@ -58,9 +58,9 @@ title: Home
           </div>
         </div>
       </div>
-    {% endfor %}
+      {% endfor %}
 
-    <div>
+      <div>
       {% if paginator.next_page %}
         <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default" role="button">Older</a>
       {% else %}
@@ -72,10 +72,40 @@ title: Home
       {% else %}
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default disabled" role="button">Newer</a>
       {% endif %}
-
-      </button>
+      </div>
     </div>
-  </div>
+    
+    <div class="col-md-3">
+      <div class="list-group">
+        <span class="list-group-item"><b>Stream Status</b></span>
+        <a id="tresane" class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">Tresane</div>
+            <div class="col-md-6 text-right" id="tresaneStatus">$42</div>
+          </div>
+        </a>
+        <a id="bigchap" class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">Bigchap</div>
+            <div class="col-md-6 text-right" id="bigchapStatus"></div>
+          </div>
+        </a>
+        <a id="damitus" class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">Damitus</div>
+            <div class="col-md-6 text-right" id="damitusStatus"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+   
+    <script type="text/javascript">
+      $(function(){
+        checkHitbox('tresane', 'Tresane', 'https://api.hitbox.tv/media/status/flux9');
+        checkHitbox('bigchap', 'Bigchap', 'https://api.hitbox.tv/media/status/Brisp');
+        checkTwitch('damitus');
+      });
+    </script>
   </div>
 </div>
 
