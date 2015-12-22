@@ -27,3 +27,9 @@
 small {
   font-size: 8px;
 }
+
+.jumbotron {
+  background-image: url(/img/dk_hearhstone.jpg);
+  background-size: cover;
+  height: 300px;
+}

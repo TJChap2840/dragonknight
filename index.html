@@ -5,8 +5,10 @@ title: Home
 {% include comment_count.html %}
 <div class="main">
 
-  <div class="alert alert-danger" role="alert"><a href="/log_guide/"><b>Click here!</b></a> "How Bad Am I?" guide -- Now with <a href="/learn_your_class/">Part 2</a></div>
+  <!-- <div class="alert alert-danger" role="alert"><a href="/log_guide/"><b>Click here!</b></a> "How Bad Am I?" guide -- Now with <a href="/learn_your_class/">Part 2</a></div> -->
 
+  <!-- <a href="/archive/"> --><div class="jumbotron">
+  </div><!-- </a> -->
   <div class="row">
     <div class="col-md-3">
       <div class="sidebar">
@@ -14,10 +16,14 @@ title: Home
           <span class="list-group-item"><b>Recent Raid Logs</b></span>
           {% for i in (1..5) %}
             <a id="link{{ i }}" class="list-group-item">
-              <div id="title{{ i }}"></div>
+              <!-- <div id="title{{ i }}"></div>
               <div class="row">
                 <div id="day{{ i }}" class="col-md-6"></div>
                 <div id="stats{{ i }}" class="col-md-6"></div>  
+              </div> -->
+              <div class="row">
+                <div class="col-md-6" id="title{{ i }}"></div>
+                <div class="col-md-6 text-right" id="day{{ i }}"></div>
               </div>
             </a>
           {% endfor %}
@@ -27,7 +33,7 @@ title: Home
         <div class="list-group">
           <span class="list-group-item"><b>MMO Champion Latest News</b></span>
           {% for i in (1..5) %}
-            <a class="list-group-item" id="mmo{{ i }}">Test</a>
+            <a class="list-group-item" id="mmo{{ i }}"></a>
           {% endfor %}
         </div>
       </div>
@@ -81,7 +87,7 @@ title: Home
         <a id="tresane" class="list-group-item" href="http://www.hitbox.tv/flux9">
           <div class="row">
             <div class="col-md-6">Tresane</div>
-            <div class="col-md-6 text-right" id="tresaneStatus">$42</div>
+            <div class="col-md-6 text-right" id="tresaneStatus"></div>
           </div>
         </a>
         <a id="bigchap" class="list-group-item" href="http://www.hitbox.tv/Brisp">
@@ -96,6 +102,41 @@ title: Home
             <div class="col-md-6 text-right" id="damitusStatus"></div>
           </div>
         </a>
+      </div>
+      <div>
+        <h4><a href="/archive/">Archive</a></h4>
+
+        {% for post in site.posts  %}
+            {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+            {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
+            {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+            {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
+
+            {% if forloop.first %}
+            <h5 id="{{ this_year }}-ref">{{this_year}}</h5>
+            <h6 id="{{ this_year }}-{{ this_month }}-ref">{{ this_month }}</h6>
+            <ul>
+            {% endif %}
+
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+
+            {% if forloop.last %}
+            </ul>
+            {% else %}
+                {% if this_year != next_year %}
+                </ul>
+                <h5 id="{{ next_year }}-ref">{{next_year}}</h5>
+                <h6 id="{{ next_year }}-{{ next_month }}-ref">{{ next_month }}</h6>
+                <ul>
+                {% else %}    
+                    {% if this_month != next_month %}
+                    </ul>
+                    <h6 id="{{ this_year }}-{{ next_month }}-ref">{{ next_month }}</h6>
+                    <ul>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
       </div>
     </div>
    
