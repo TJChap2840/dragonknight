@@ -8,7 +8,7 @@
       {% for node in pages_list %}
         {% if node.title != null %}
           {% if node.layout == "page" %}
-            {% if node.title != "Archive" %}
+            {% if node.title != "Archive" and node.title != "Hearthstone Tournament" %}
             <li><a href="{{ node.url }}">{{ node.title }}</a>
             {% endif %}
           {% endif %}

@@ -60,7 +60,7 @@ function sideBar(container) {
       };
     },
     error: function() {
-      alert("error");
+      // alert("error");
     }
   });
 
@@ -97,7 +97,7 @@ function checkHitbox(container, player, url) {
       // alert("success")
     },
     error: function(data) {
-      alert("error");
+      // alert("error");
     }
   })
 }
