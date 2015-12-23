@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/custom.css" rel="stylesheet">
+    <link href="/public/theme_one.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="/public/bootstrap-image-gallery.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://static.wowhead.com/widgets/power.js"></script>
+    <script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }</script>
+    <script src="/public/parser.js"></script> 
+    <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    <script src="/public/bootstrap-image-gallery.min.js"></script>
+</head>
+<body>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65566204-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <nav class="navbar navbar-inverse navbar-static-top">
+<div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Dragon Knight</a>
+    </div>
+    <ul class="nav navbar-nav">
+      
+      
+        
+          
+            
+            <li><a href="/about/">About</a>
+            
+          
+          
+      
+        
+          
+            
+          
+          
+      
+        
+          
+          
+      
+        
+          
+            
+          
+          
+      
+        
+          
+          
+      
+        
+          
+          
+      
+        
+          
+          
+      
+        
+          
+            
+            <li><a href="/pictures/">Pictures</a>
+            
+          
+          
+      
+        
+          
+            
+            <li><a href="/raid_team/">Raid Team</a>
+            
+          
+          
+      
+          
+      
+        
+          
+          
+      
+        
+          
+          
+      
+        
+          
+          
+      
+        
+          
+          
+      
+        
+          
+          
+      
+        
+          
+          
+      
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" roles="botton" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+            <li><a href="/best_in_slot/">Best in Slot</a></li>
+          
+            <li><a href="/weak_aura/">Weak Auras</a></li>
+          
+            <li><a href="/log_guide/">How Bad Am I?</a></li>
+          
+            <li><a href="/learn_your_class/">Learn Your Class</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="marsh">Happy Birthday Marsh</li>
+    </ul>
+  
+</nav>
+  <div class="container">
+    <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'dragonknight'; // required: replace example with your forum shortname
+  // var disqus_developer = 1; // Comment out when the site is live
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+<div class="main">
+
+  <!-- <div class="alert alert-danger" role="alert"><a href="/log_guide/"><b>Click here!</b></a> "How Bad Am I?" guide -- Now with <a href="/learn_your_class/">Part 2</a></div> -->
+
+  <a href="/hearthstone/"><div class="jumbotron">
+  </div></a>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar">
+        <div class="list-group">
+          <span class="list-group-item"><b>Recent Raid Logs</b></span>
+          
+            <a id="link1" class="list-group-item">
+              <!-- <div id="title1"></div>
+              <div class="row">
+                <div id="day1" class="col-md-6"></div>
+                <div id="stats1" class="col-md-6"></div>  
+              </div> -->
+              <div class="row">
+                <div class="col-md-6" id="title1"></div>
+                <div class="col-md-6 text-right" id="day1"></div>
+              </div>
+            </a>
+          
+            <a id="link2" class="list-group-item">
+              <!-- <div id="title2"></div>
+              <div class="row">
+                <div id="day2" class="col-md-6"></div>
+                <div id="stats2" class="col-md-6"></div>  
+              </div> -->
+              <div class="row">
+                <div class="col-md-6" id="title2"></div>
+                <div class="col-md-6 text-right" id="day2"></div>
+              </div>
+            </a>
+          
+            <a id="link3" class="list-group-item">
+              <!-- <div id="title3"></div>
+              <div class="row">
+                <div id="day3" class="col-md-6"></div>
+                <div id="stats3" class="col-md-6"></div>  
+              </div> -->
+              <div class="row">
+                <div class="col-md-6" id="title3"></div>
+                <div class="col-md-6 text-right" id="day3"></div>
+              </div>
+            </a>
+          
+            <a id="link4" class="list-group-item">
+              <!-- <div id="title4"></div>
+              <div class="row">
+                <div id="day4" class="col-md-6"></div>
+                <div id="stats4" class="col-md-6"></div>  
+              </div> -->
+              <div class="row">
+                <div class="col-md-6" id="title4"></div>
+                <div class="col-md-6 text-right" id="day4"></div>
+              </div>
+            </a>
+          
+            <a id="link5" class="list-group-item">
+              <!-- <div id="title5"></div>
+              <div class="row">
+                <div id="day5" class="col-md-6"></div>
+                <div id="stats5" class="col-md-6"></div>  
+              </div> -->
+              <div class="row">
+                <div class="col-md-6" id="title5"></div>
+                <div class="col-md-6 text-right" id="day5"></div>
+              </div>
+            </a>
+          
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="list-group">
+          <span class="list-group-item"><b>MMO Champion Latest News</b></span>
+          
+            <a class="list-group-item" id="mmo1"></a>
+          
+            <a class="list-group-item" id="mmo2"></a>
+          
+            <a class="list-group-item" id="mmo3"></a>
+          
+            <a class="list-group-item" id="mmo4"></a>
+          
+            <a class="list-group-item" id="mmo5"></a>
+          
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(function(){
+        sideBar('#news');
+      });
+    </script>
+
+    <div class="col-md-6">
+      
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"> 
+            <h1 class="panel-title">
+              <a href="/2015/07/02/negative-positive/">
+                Less Negativity, More Positivity
+              </a>
+            </h1>
+
+            <time datetime="2015-07-02T00:00:00-04:00">02 Jul 2015 • </time>
+            <a href="/2015/07/02/negative-positive/index.html#disqus_thread" data-disqus-identifier="/2015/07/02/negative-positive/"></a>
+          </div>
+          <div class="panel-body">
+            <h4><u>Thanks Tresane</u></h4>
+
+
+<p>Everybody thank Tresane for taking a little time out of his day to clean up the site a bit and add some color. I tried to add some color but I'm not very good at it and it looked terrible.</p>
+
+<h4><u>On to the raid talk</u></h4>
+
+
+<p>I'd like to welcome our new additions to the raid team. We've had quite a few new people interested in raiding with us and I think it is a great thing. Incorporating them will have its challenges but I think it will be good for our team and guild in the end!</p>
+
+<p>Negativity and complaints have started to pop up here and there. I know these are minor in the grand scheme of things but I want to get out ahead of them before they turn into something bigger. Let's please keep the overall vibe of the raid positive and fun. We have to continue to work as a team if we want to down more bosses and get more loot. I fully understand that people may have differences of opinions but ultimately the decision will come down to what is better for the raid and the negativity doesn't help in anyway. If you get called out or are calling somebody out, please be constructive about it. Taking things to personally doesn't help. If you see somebody that needs help, help them, don't yell at them.</p>
+
+<p>That leads into my next topic. Please do not get frustrated when an item is looted to somebody automatically or given to them even if your roll won. This is progression and it helps the ENTIRE raid if the right loot goes to the right people. This won't always happen and the balance may be hard to find at first, but it is for the good of the raid. The same idea goes for tier pieces. I have touched on this multiple times, but it does the raid no good if you are trying to get your 2pc/4pc just for the sake of having it. That is doubly so if you don't know what benefit you will get out of your set bonuses. If anything, passing the piece to somebody who gets more benefit out of it only helps you get your full set quicker because we will be downing bosses quicker.</p>
+
+<p>As far as composition goes, it's time to start thinking about what we can do better. We have too many people on the same token. Even if we ignore tokens we are starting to get too many of the same classes. It would be a big help to me if people would consider switching to fill gaps. Gearing out alts is extremely easy now via Timewalking dungeons, Baleful gear, and Mythic dungeons. This also goes for people who are not having as much fun on their chosen spec/class or if you are unable to get your DPS numbers up to the right level. Plenty of us will help you gear alts. It's not fair to the raid or yourself if you just show up as a warm body and do nothing else. Others are putting in hard work and I'd hate to see that hard work go to waste. Keep in mind that people will start getting rewarded for helping out other raid members.</p>
+
+<p>Finally, please try and stick with the plan. There are plenty of valid reasons for moving to heroic and I'll try to compromise on that, but we are getting ahead of ourselves if we think we can leave normal completely behind for heroic while we continue to struggle on normal bosses.</p>
+
+<h4><u>New Tyrant Strat</u></h4>
+
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/nkLf9thG01w" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"> 
+            <h1 class="panel-title">
+              <a href="/2015/06/27/what-is-a-circle/">
+                Can you explain what you mean when you say "circle"?
+              </a>
+            </h1>
+
+            <time datetime="2015-06-27T00:00:00-04:00">27 Jun 2015 • </time>
+            <a href="/2015/06/27/what-is-a-circle/index.html#disqus_thread" data-disqus-identifier="/2015/06/27/what-is-a-circle/"></a>
+          </div>
+          <div class="panel-body">
+            <h2>We are now 9/13</h2>
+
+<p>After a rough start with a quite a few wipes on trash, Dragon Knight persevered and killed two more bosses. Socrethar was a joke and we only wiped the first time because the Construct's abilities weren't immediately clear to me. Tyrant was on a whole other level but we did a great job taking it step by step. Everybody did a great job listening both before fights and in fights. Keep it up! Our goal for next week is to kill the bosses up to Tyrant on Tuesday and then move on to the pre-Mannoroth bosses on Wednesday.</p>
+
+<p>Shout out to Bruce (aka Sapphyra) and Dawnguard. Bruce and Dawnguard have both recently joined our raid (hopefully permanently) and did a great job stepping up when we needed them. Great DPS Bruce and thanks for going Holy for us Dawnguard.</p>
+
+<p>Make sure you guys ask Crians what a circle is as he should certainly know by now.</p>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading"> 
+            <h1 class="panel-title">
+              <a href="/2015/06/25/site_suggestion_kudos/">
+                Suggestion for the site and kudos on the boss kills
+              </a>
+            </h1>
+
+            <time datetime="2015-06-25T00:00:00-04:00">25 Jun 2015 • </time>
+            <a href="/2015/06/25/site_suggestion_kudos/index.html#disqus_thread" data-disqus-identifier="/2015/06/25/site_suggestion_kudos/"></a>
+          </div>
+          <div class="panel-body">
+            <p>First of all, yes, I know the site doesn't look <em>AMAZING</em> but my background is development, not design. I'm always game for help or suggestions.</p>
+
+<p>Below is a list of planned content. Let me know if you have suggestions for more.</p>
+
+<ul>
+<li>Warcraft Logs Feed</li>
+<li>Guild picture section</li>
+<li>Comment support (probably not a forums)</li>
+</ul>
+
+
+<h2>We are 7/13N!</h2>
+
+<p>Excellent job so far. Everybody has kept it <span class="label label-success">light-hearted</span> but also <span class="label label-warning">serious</span> when we needed it. It's great that you are all chiming in for on-the-fly adjustments. It takes a lot of stress off of me as raid leader and makes the overall attitude better as well.</p>
+
+<p>Tonight we will be going to Socrethar, Tyrant Velhari, and then Fel Lord. The difficulty will continue to ramp up as we go further into the instance. Not only because the bosses will be harder but the ilvl requirement goes up as well.</p>
+
+<p>Here is a picture for a boss order guide if you would like to know the general direction we will be going.</p>
+
+<p class="gif"><img src="/img/boss_order.jpg"></img></p>
+
+
+
+
+          </div>
+        </div>
+      </div>
+      
+
+      <div>
+      
+        <a href="/page6" class="col-md-6 btn btn-default" role="button">Older</a>
+      
+      
+      
+        <a href="/page4" class="col-md-6 btn btn-default" role="button">Newer</a>
+      
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="list-group">
+        <span class="list-group-item"><b>Stream Status</b></span>
+        <a id="tresane" class="list-group-item" href="http://www.hitbox.tv/flux9">
+          <div class="row">
+            <div class="col-md-6">Tresane</div>
+            <div class="col-md-6 text-right" id="tresaneStatus"></div>
+          </div>
+        </a>
+        <a id="bigchap" class="list-group-item" href="http://www.hitbox.tv/Brisp">
+          <div class="row">
+            <div class="col-md-6">Bigchap</div>
+            <div class="col-md-6 text-right" id="bigchapStatus"></div>
+          </div>
+        </a>
+        <a id="damitus" class="list-group-item" href="http://www.twitch.tv/damituswow">
+          <div class="row">
+            <div class="col-md-6">Damitus</div>
+            <div class="col-md-6 text-right" id="damitusStatus"></div>
+          </div>
+        </a>
+      </div>
+      <div>
+        <h4><a href="/archive/">Archive</a></h4>
+
+        
+            
+            
+            
+            
+
+            
+            <h5 id="2015-ref">2015</h5>
+            <h6 id="2015-December-ref">December</h6>
+            <ul>
+            
+
+            <li><a href="/2015/12/22/hearthstone-tournament/">Hearthstone Tournament and updates</a></li>
+
+            
+                    
+                    
+                    </ul>
+                    <h6 id="2015-October-ref">October</h6>
+                    <ul>
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/10/23/valor-is-back/">Valor is Back</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/10/21/mythic-hellfire-assault/">Mythic Hellfire Assault Down</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/10/20/end-of-the-expac/">End of the expansion.. Or is it?</a></li>
+
+            
+                    
+                    
+                    </ul>
+                    <h6 id="2015-August-ref">August</h6>
+                    <ul>
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/08/29/warlords-of-ketchup/">Warlords of Ketchup</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/08/13/learn-to-play/">L2P Nub</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/08/12/preparing-for-mythic/">Let's Prepare for Mythic</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/08/03/resolve/">ClassTrinketYouKnowIWantIt</a></li>
+
+            
+                    
+                    
+                    </ul>
+                    <h6 id="2015-July-ref">July</h6>
+                    <ul>
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/07/24/socrethar/">Salt of Socrethar</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/07/23/all-the-things/">All the things</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/07/16/archimonde/">Archimonde</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/07/15/im-back/">I'm BAAAACCCCKKKK</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/07/02/negative-positive/">Less Negativity, More Positivity</a></li>
+
+            
+                    
+                    
+                    </ul>
+                    <h6 id="2015-June-ref">June</h6>
+                    <ul>
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/06/27/what-is-a-circle/">Can you explain what you mean when you say "circle"?</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/06/25/site_suggestion_kudos/">Suggestion for the site and kudos on the boss kills</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/06/23/hfc-time/">It's almost TIMEEEE</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/06/20/loot-priority/">Loot Priority and BIS Lists</a></li>
+
+            
+                    
+                    
+                
+            
+        
+            
+            
+            
+            
+
+            
+
+            <li><a href="/2015/06/20/getting-to-hfc/">Getting to Hellfire Citadel</a></li>
+
+            
+            </ul>
+            
+        
+      </div>
+    </div>
+   
+    <script type="text/javascript">
+      $(function(){
+        checkHitbox('tresane', 'Tresane', 'https://api.hitbox.tv/media/status/flux9');
+        checkHitbox('bigchap', 'Bigchap', 'https://api.hitbox.tv/media/status/Brisp');
+        checkTwitch('damitus');
+      });
+    </script>
+  </div>
+</div>
+
+
+  </div>
+  <footer class="footer">
+    <br/>
+    <br/>
+  </footer>
+</body>
+</html>

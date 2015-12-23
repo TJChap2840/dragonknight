@@ -1,0 +1,35 @@
+.gif {
+  text-align: center;
+}
+
+.vcenter {
+  padding-top: 5px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background-color: #e3e3e3;
+}
+
+.thumbnail img { 
+  min-height: 150px; height: 150px;
+  /*min-width: 100px; width: 100px; */
+}
+
+.public-title {
+  border: 1px;
+  border-style: dotted;
+}
+
+small {
+  font-size: 8px;
+}
+
+.jumbotron {
+  background-image: url(/img/dk_hearhstone.jpg);
+  background-size: cover;
+  height: 300px;
+}
