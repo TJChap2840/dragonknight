@@ -33,3 +33,7 @@ small {
   background-size: cover;
   height: 300px;
 }
+
+#stream {
+  font-size: 10px;
+}
