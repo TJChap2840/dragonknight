@@ -89,9 +89,11 @@ function checkHitbox(container, player, url) {
     success: function(data) {
       var status = "OFFLINE";
       document.getElementById(container).style.background = "#ffe5e5";
-      if (data.media_is_live == 1) {
+      if (data.livestream[0].media_is_live == 1) {
         status = "LIVE";
         document.getElementById(container).style.background = "#c5ecc5";
+        document.getElementById(container + "Title").innerHTML = "<em>" + data.livestream[0].media_status + "<em>";
+        document.getElementById(container + "Game").innerHTML = "Playing <b>" + data.livestream[0].category_name + "</b>";
       }
       document.getElementById(container + "Status").innerHTML = status;
       // alert("success")
@@ -112,6 +114,8 @@ function checkTwitch(container) {
       if (channel.stream != null) {
         status = "LIVE";
         document.getElementById(container).style.background = "#c5ecc5";
+        document.getElementById(container + "Title").innerHTML = "TEST";
+        document.getElementById(container + "Game").innerHTML = "GAME";
       }
       document.getElementById(container + "Status").innerHTML  = status
     }

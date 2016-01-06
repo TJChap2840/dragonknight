@@ -89,17 +89,35 @@ title: Home
             <div class="col-md-6">Tresane</div>
             <div class="col-md-6 text-right" id="tresaneStatus"></div>
           </div>
+          <div class="row">
+            <div class="col-md-12" id="tresaneGame"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" id="tresaneTitle"></div>
+          </div>
         </a>
         <a id="bigchap" class="list-group-item" href="http://www.hitbox.tv/Brisp">
           <div class="row">
             <div class="col-md-6">Bigchap</div>
             <div class="col-md-6 text-right" id="bigchapStatus"></div>
           </div>
+          <div class="row">
+            <div class="col-md-12" id="bigchapGame"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" id="bigchapTitle"></div>
+          </div>
         </a>
         <a id="damitus" class="list-group-item" href="http://www.twitch.tv/damituswow">
           <div class="row">
             <div class="col-md-6">Damitus</div>
             <div class="col-md-6 text-right" id="damitusStatus"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" id="damitusGame"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" id="damitusTitle"></div>
           </div>
         </a>
       </div>
@@ -142,8 +160,8 @@ title: Home
    
     <script type="text/javascript">
       $(function(){
-        checkHitbox('tresane', 'Tresane', 'https://api.hitbox.tv/media/status/flux9');
-        checkHitbox('bigchap', 'Bigchap', 'https://api.hitbox.tv/media/status/Brisp');
+        checkHitbox('tresane', 'Tresane', 'https://api.hitbox.tv/media/live/flux9');
+        checkHitbox('bigchap', 'Bigchap', 'https://api.hitbox.tv/media/live/Brisp');
         checkTwitch('damitus');
       });
     </script>
