@@ -82,16 +82,18 @@ function sideBar(container) {
   });
 }
 
-function checkHitbox(container, player, url) {
+function checkHitbox(container, url) {
   $.ajax({
     url: url,
     dataType: 'json',
     success: function(data) {
       var status = "OFFLINE";
       document.getElementById(container).style.background = "#ffe5e5";
-      if (data.media_is_live == 1) {
+      if (data.livestream[0].media_is_live == 1) {
         status = "LIVE";
         document.getElementById(container).style.background = "#c5ecc5";
+        document.getElementById(container + "Title").innerHTML = "<em>" + data.livestream[0].media_status + "<em>";
+        document.getElementById(container + "Game").innerHTML = "Playing <b>" + data.livestream[0].category_name + "</b>";
       }
       document.getElementById(container + "Status").innerHTML = status;
       // alert("success")
@@ -102,16 +104,18 @@ function checkHitbox(container, player, url) {
   })
 }
 
-function checkTwitch(container) {
+function checkTwitch(container, url) {
   $.ajax({ 
-    url:'https://api.twitch.tv/kraken/streams/damituswow',
+    url: url,
     dataType:'jsonp',
-    success: function(channel) { 
+    success: function(data) { 
       status = "OFFLINE";
       document.getElementById(container).style.background = "#ffe5e5";
-      if (channel.stream != null) {
+      if (data.stream != null) {
         status = "LIVE";
         document.getElementById(container).style.background = "#c5ecc5";
+        document.getElementById(container + "Title").innerHTML = "<em>" + data.stream.channel.status + "<em>";
+        document.getElementById(container + "Game").innerHTML = "Playing <b>" + data.stream.game + "</b>";
       }
       document.getElementById(container + "Status").innerHTML  = status
     }
