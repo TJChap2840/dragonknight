@@ -108,14 +108,14 @@ function checkTwitch(container) {
   $.ajax({ 
     url:'https://api.twitch.tv/kraken/streams/damituswow',
     dataType:'jsonp',
-    success: function(channel) { 
+    success: function(data) { 
       status = "OFFLINE";
       document.getElementById(container).style.background = "#ffe5e5";
-      if (channel.stream != null) {
+      if (data.stream != null) {
         status = "LIVE";
         document.getElementById(container).style.background = "#c5ecc5";
-        document.getElementById(container + "Title").innerHTML = "TEST";
-        document.getElementById(container + "Game").innerHTML = "GAME";
+        document.getElementById(container + "Title").innerHTML = "<em>" + data.stream.channel.status + "<em>";
+        document.getElementById(container + "Game").innerHTML = "Playing <b>" + data.stream.game + "</b>";
       }
       document.getElementById(container + "Status").innerHTML  = status
     }
