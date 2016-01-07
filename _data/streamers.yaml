@@ -1,0 +1,12 @@
+- name: Tresane
+  url: https://api.hitbox.tv/media/live/flux9
+  service: hitbox
+- name: Bigchap
+  url: https://api.hitbox.tv/media/live/Brisp
+  service: hitbox
+- name: Cptkrunk
+  url: https://api.twitch.tv/kraken/streams/sotpos
+  service: twitch
+- name: Damitus
+  url: https://api.twitch.tv/kraken/streams/damituswow
+  service: twitch

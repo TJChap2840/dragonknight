@@ -2,6 +2,7 @@
 layout: default
 title: Home
 ---
+{% assign sorted_streamers = site.data.streamers | sort: 'name' %}
 {% include comment_count.html %}
 <div class="main">
 
@@ -84,7 +85,21 @@ title: Home
     <div class="col-md-3">
       <div class="list-group">
         <span class="list-group-item"><b>Stream Status</b></span>
-        <a id="tresane" class="list-group-item" href="http://www.hitbox.tv/flux9">
+        {% for streamer in sorted_streamers %}
+        <a id="{{ streamer.name }}" class="list-group-item" href="404.html">
+          <div class="row">
+            <div class="col-md-6">{{ streamer.name }}</div>
+            <div class="col-md-6 text-right" id="{{ streamer.name }}Status"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" id="{{ streamer.name }}Title"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" id="{{ streamer.name }}Game"></div>
+          </div>
+        </a>
+        {% endfor %}
+        <!-- <a id="tresane" class="list-group-item" href="http://www.hitbox.tv/flux9">
           <div class="row">
             <div class="col-md-6">Tresane</div>
             <div class="col-md-6 text-right" id="tresaneStatus"></div>
@@ -131,7 +146,7 @@ title: Home
           <div class="row" id="stream">
             <div class="col-md-12" id="cptkrunkGame"></div>
           </div>
-        </a>
+        </a> -->
       </div>
       <div>
         <h4><a href="/archive/">Archive</a></h4>
@@ -172,10 +187,11 @@ title: Home
    
     <script type="text/javascript">
       $(function(){
-        checkHitbox('tresane', 'https://api.hitbox.tv/media/live/flux9');
-        checkHitbox('bigchap', 'https://api.hitbox.tv/media/live/Brisp');
-        checkTwitch('damitus', 'https://api.twitch.tv/kraken/streams/damituswow');
-        checkTwitch('cptkrunk', 'https://api.twitch.tv/kraken/streams/sotpos');
+        // checkHitbox('tresane', 'https://api.hitbox.tv/media/live/flux9');
+        // checkHitbox('bigchap', 'https://api.hitbox.tv/media/live/Brisp');
+        // checkTwitch('damitus', 'https://api.twitch.tv/kraken/streams/damituswow');
+        // checkTwitch('cptkrunk', 'https://api.twitch.tv/kraken/streams/sotpos');
+        getStatus();
       });
     </script>
   </div>
