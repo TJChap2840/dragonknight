@@ -37,3 +37,13 @@ small {
 #stream {
   font-size: 12px;
 }
+
+.kills {
+  font-size: 12px;
+  color: #9fe09f;
+}
+
+.wipes {
+  font-size: 12px;
+  color: #ff9999;
+}
