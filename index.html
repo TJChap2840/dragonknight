@@ -14,7 +14,13 @@ title: Home
     <div class="col-md-3">
       <div class="sidebar">
         <div class="list-group">
-          <span class="list-group-item"><b>Recent Raid Logs</b></span>
+          <a class="list-group-item" href="https://www.warcraftlogs.com/guilds/22475">
+            <div class="row">
+              <div class="col-md-12">
+                <b>Recent Raid Logs</b>
+              </div>
+            </div>
+          </a>
           {% for i in (1..5) %}
             <a id="link{{ i }}" class="list-group-item">
               <!-- <div id="title{{ i }}"></div>
@@ -26,13 +32,23 @@ title: Home
                 <div class="col-md-6" id="title{{ i }}"></div>
                 <div class="col-md-6 text-right" id="day{{ i }}"></div>
               </div>
+              <div class="row">
+                <div class="col-md-6" id="kills{{ i }}"></div>
+                <div class="col-md-6 text-right" id="wipes{{ i }}"></div>
+              </div>
             </a>
           {% endfor %}
         </div>
       </div>
       <div class="sidebar">
         <div class="list-group">
-          <span class="list-group-item"><b>MMO Champion Latest News</b></span>
+          <a class="list-group-item" href="http://www.mmo-champion.com/content/">
+            <div class="row">
+              <div class="col-md-12">
+                <b>MMO Champion Latest News</b>
+              </div>
+            </div>
+          </a>
           {% for i in (1..5) %}
             <a class="list-group-item" id="mmo{{ i }}"></a>
           {% endfor %}
@@ -91,10 +107,10 @@ title: Home
             <div class="col-md-6">{{ streamer.name }}</div>
             <div class="col-md-6 text-right" id="{{ streamer.name }}Status"></div>
           </div>
-          <div class="row">
+          <div class="row" id="stream">
             <div class="col-md-12" id="{{ streamer.name }}Title"></div>
           </div>
-          <div class="row">
+          <div class="row" id="stream">
             <div class="col-md-12" id="{{ streamer.name }}Game"></div>
           </div>
         </a>

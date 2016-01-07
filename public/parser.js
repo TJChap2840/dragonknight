@@ -11,11 +11,13 @@ function sideBar(container) {
     url: reports_url,
     dataType: 'json',
     success: function(raids) {
+      var deferreds = [];
       var report_base = 'https://www.warcraftlogs.com/reports/';
       var counter = 0;
-      for (var i = raids.length - 1; i >= raids.length - 5; i--) {
+      $.each(raids.reverse(), function (i, raid) {
+      // for (var i = raids.length - 1; i >= raids.length - 5; i--) {
         counter++;
-        var raid = raids[i];
+        // var raid = raids[i];
         var title = raid.title;
         var report_url = report_base + raid.id;
 
@@ -29,35 +31,36 @@ function sideBar(container) {
         var fight_url = base_url + '/report/fights/' + raid.id + '?api_key=' + api_key;
 
         var div = $("#stats" + counter);
-        
-        $.ajax({
+        var killsDiv = document.getElementById("kills" + counter);
+        var wipesDiv = document.getElementById("wipes" + counter);
+        deferreds.push($.ajax({
           url: fight_url,
           dataType: 'json',
           success: function (data) {
-            // div.append($("<span></span>")).text(counter);
-            // var kills = [];
-            // var wipes = [];
-            // for (var i = 0; i < data.fights.length; i++) {
-            //   var fight = data.fights[i];
-            //   if (fight.kill) {
-            //     kills.push(fight);
-            //   } else {
-            //     wipes.push(fight);
-            //   }
-            // }
-            // if (kills.length > 0) {
-            //   div.append($("<span></span>").text(kills.length + 'k'));
-            //   if (wipes.length > 0) {
-            //     div.append($("<span></span>").text('/'));
-            //   }
-            // }
-
-            // if (wipes.length > 0) {
-            //   div.append($("<span></span>").text(wipes.length + 'w'));
-            // }
+            var kills = 0;
+            var wipes = 0;
+            for (var i = 0; i < data.fights.length; i++) {
+              var fight = data.fights[i];
+              if (fight.boss != 0) {
+                if (fight.kill) {
+                  kills++;
+                } else {
+                  wipes++;
+                }
+              }
+            };
+            console.log(killsDiv.id);
+            killsDiv.innerHTML = kills + " Kills";
+            wipesDiv.innerHTML = wipes + " Wipes";
           }
-        });
-      };
+        }));    
+        if (counter >= 5) {
+          return false;
+        }
+      });
+      $.when.apply($, deferreds).done(function() {
+        // all ajax calls are done and results are available now
+      });
     },
     error: function() {
       // alert("error");
