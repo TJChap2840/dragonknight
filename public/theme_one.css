@@ -24,6 +24,12 @@ body {
 .navbar-nav {
   padding-top:2px;
 }
+
+.navbar .nav > li.dropdown.open.active > a:hover, 
+.navbar .nav > li.dropdown.open > a {
+  background-color:#1C5BA5;
+}
+
 .panel-default > .panel-heading {
   color:#fff;
   background-color:#A5892B;
