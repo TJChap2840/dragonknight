@@ -82,7 +82,7 @@ function sideBar(container) {
   });
 }
 
-function checkHitbox(container, player, url) {
+function checkHitbox(container, url) {
   $.ajax({
     url: url,
     dataType: 'json',
@@ -104,9 +104,9 @@ function checkHitbox(container, player, url) {
   })
 }
 
-function checkTwitch(container) {
+function checkTwitch(container, url) {
   $.ajax({ 
-    url:'https://api.twitch.tv/kraken/streams/damituswow',
+    url: url,
     dataType:'jsonp',
     success: function(data) { 
       status = "OFFLINE";

@@ -120,6 +120,18 @@ title: Home
             <div class="col-md-12" id="damitusGame"></div>
           </div>
         </a>
+        <a id="cptkrunk" class="list-group-item" href="http://www.twitch.tv/damituswow">
+          <div class="row">
+            <div class="col-md-6">Cptkrunk</div>
+            <div class="col-md-6 text-right" id="cptkrunkStatus"></div>
+          </div>
+          <div class="row" id="stream">
+            <div class="col-md-12" id="cptkrunkTitle"></div>
+          </div>
+          <div class="row" id="stream">
+            <div class="col-md-12" id="cptkrunkGame"></div>
+          </div>
+        </a>
       </div>
       <div>
         <h4><a href="/archive/">Archive</a></h4>
@@ -160,9 +172,10 @@ title: Home
    
     <script type="text/javascript">
       $(function(){
-        checkHitbox('tresane', 'Tresane', 'https://api.hitbox.tv/media/live/flux9');
-        checkHitbox('bigchap', 'Bigchap', 'https://api.hitbox.tv/media/live/Brisp');
-        checkTwitch('damitus');
+        checkHitbox('tresane', 'https://api.hitbox.tv/media/live/flux9');
+        checkHitbox('bigchap', 'https://api.hitbox.tv/media/live/Brisp');
+        checkTwitch('damitus', 'https://api.twitch.tv/kraken/streams/damituswow');
+        checkTwitch('cptkrunk', 'https://api.twitch.tv/kraken/streams/sotpos');
       });
     </script>
   </div>
