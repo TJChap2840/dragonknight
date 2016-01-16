@@ -12,8 +12,8 @@ highlighter: pygments
 
 pages_list:       
   About: '/about/'
-  Archive: '/archive/'
   Raid Team: '/raid_team/'
+
 
 resource_list:
   Best in Slot: '/best_in_slot/'

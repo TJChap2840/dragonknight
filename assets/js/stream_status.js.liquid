@@ -1,13 +1,19 @@
 ---
 ---
 
+// function getStatus() {
+//   {% for streamer in site.data.streamers %}
+//     if ("{{streamer.service}}" == "twitch") {
+//       checkTwitch("{{streamer.name}}", "{{streamer.url}}");
+//     } else {
+//       checkHitbox("{{streamer.name}}", "{{streamer.url}}");
+//     }
+//   {% endfor %}
+// }
+
 function getStatus() {
   {% for streamer in site.data.streamers %}
-    if ("{{streamer.service}}" == "twitch") {
-      checkTwitch("{{streamer.name}}", "{{streamer.url}}");
-    } else {
-      checkHitbox("{{streamer.name}}", "{{streamer.url}}");
-    }
+    checkTwitch("{{streamer.name}}", "{{streamer.url}}");
   {% endfor %}
 }
 

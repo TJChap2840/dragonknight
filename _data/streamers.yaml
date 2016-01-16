@@ -1,9 +1,9 @@
 - name: Tresane
-  url: https://api.hitbox.tv/media/live/flux9
-  service: hitbox
+  url: https://api.twitch.tv/kraken/streams/flux9
+  service: twitch
 - name: Bigchap
-  url: https://api.hitbox.tv/media/live/Brisp
-  service: hitbox
+  url: https://api.twitch.tv/kraken/streams/brisp
+  service: twitch
 - name: Cptkrunk
   url: https://api.twitch.tv/kraken/streams/sotpos
   service: twitch

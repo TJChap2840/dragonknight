@@ -25,7 +25,7 @@ Something great happened in the raid this week and we were lucky to have Dam rec
     frameborder="0" 
     scrolling="no" 
     allowfullscreen
-    autoplay="false">
+    autoplay=false>
 </iframe>
 </div>
 
