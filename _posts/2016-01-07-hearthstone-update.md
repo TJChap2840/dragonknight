@@ -2,7 +2,6 @@
 layout: post
 title: Hearthstone Update and "Korfearon Reads"
 ---
-
 <h3>Hearthstone Update</h3>
 The deadline to sign up for the tournament is this Saturday. Sometime on Sunday I will create the bracket and all players will be required to give me their decks and entry fee. You can see a preview of the bracket below along with a link to the information page.
 

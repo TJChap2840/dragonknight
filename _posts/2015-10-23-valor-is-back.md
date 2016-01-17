@@ -2,7 +2,6 @@
 layout: post
 title: Valor is Back
 ---
-
 Prepare yourself for 6.2.3 if you are looking to get a maximum of 10 more ilvls out from your current gear. 
 
 You can get up 4875 Valor per week. Which means you can give +10 ilvls to 9 of your items in one week.

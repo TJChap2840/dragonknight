@@ -2,7 +2,6 @@
 layout: post
 title: Let's Prepare for Mythic
 ---
-
 <h3>New Raid Schedule</h3>
 <p>Monday is typically an off night but we try to use it for more progression attempts whenever raiders are available. Part of the reason we needed the extra night for progression was that we were using one of our main nights as a gearing night. We have decided to switch the schedule up a bit and make Monday a gearing night while using Tues-Thur purely for progression. For everybody involved in raiding, I need you to check your guild calendar and make sure you respond. I need to have a good idea of who is planning on coming. Not replying at all gives me no info. If you accept an invite, I better see you in the raid unless you give somebody advanced noticed whenever possible.</p>
 

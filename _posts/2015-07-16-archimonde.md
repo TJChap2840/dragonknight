@@ -2,7 +2,6 @@
 layout: post
 title: Archimonde
 ---
-
 <h4>Mannoroth Down</h4>
 We killed Mannoroth tonight after only two attempts. We spent probably a quarter of our second attempt talking about what was the best strat to use after the inevitable wipe on that attempt. Sweet irony.
 

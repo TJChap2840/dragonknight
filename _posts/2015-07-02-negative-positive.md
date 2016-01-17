@@ -2,7 +2,6 @@
 layout: post
 title: Less Negativity, More Positivity
 ---
-
 <h4><u>Thanks Tresane</u></h4>
 Everybody thank Tresane for taking a little time out of his day to clean up the site a bit and add some color. I tried to add some color but I'm not very good at it and it looked terrible. 
 

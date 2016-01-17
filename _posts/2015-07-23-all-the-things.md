@@ -2,7 +2,6 @@
 layout: post
 title: All the things
 ---
-
 <h4>Progression Update</h4>
 As of Wednesday night, we are 12.5/13 normal and 5/13 heroic. Really good job overall guys. Attendance has been great and the attitude of the raid has been good.
 

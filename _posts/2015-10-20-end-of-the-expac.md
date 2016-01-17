@@ -2,7 +2,6 @@
 layout: post
 title: End of the expansion.. Or is it?
 ---
-
 <h3>Quick Update</h3>
 <p>Heroic Archimonde down. On to Mythic.
 

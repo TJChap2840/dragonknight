@@ -2,7 +2,6 @@
 layout: post
 title: Salt of Socrethar
 ---
-
 <em>Get it guys? SALT of Socrethar??....I'll see myself out...</em>
 
 <h4>We're 6 of 13 heroic</h4>

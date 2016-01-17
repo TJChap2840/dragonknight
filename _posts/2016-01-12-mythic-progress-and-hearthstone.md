@@ -2,7 +2,6 @@
 layout: post
 title: Mythic Progress and Hearthstone
 ---
-
 <h3>Mythic Progress</h3>
 We've been making good progress since my last post on this topic. We now have Hellfire Council on farm and are trying to make progress on Kilrogg. We haven't had a lot of opportunities because we have had poor turn out on Wednesday and Thursday nights. Tuesday's turn out has been great, but we have had to use Tuesday to clear farm. Our attendance needs to be more consistent or we will have to make some changes to our roster.
 

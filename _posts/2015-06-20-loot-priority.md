@@ -2,7 +2,6 @@
 layout: post
 title: Loot Priority and BIS Lists
 ---
-
 There will be some loot rule changes with the upcoming tier to streamline the progression process.
 
 I am working on Best in Slot lists for everybody in our raid group. These lists will be a resource for you and used as a tool for the officers to be able to hand out loot. A person will get priority if the item is BIS for them. If the item is BIS for more than one person, the item will go to a roll (with biggest iLvl upgrade being accounted for).

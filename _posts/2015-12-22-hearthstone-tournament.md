@@ -2,7 +2,6 @@
 layout: post
 title: Hearthstone Tournament and updates
 ---
-
 <h3>Hearthstone Info</h3>
 I am happy to announce the start of a new guild Hearthstone tournament series. The tournament date is still TBD but will occur sometime in the middle of January. All guild members (and their friends) are encouraged to sign up. You can find more info by clicking on the Hearthstone banner at the top of the page or going to <a href="/hearthstone/">this</a> link. Contact Brisp/Bigchap if you'd like to participate.
 

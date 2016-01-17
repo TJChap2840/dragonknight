@@ -2,7 +2,6 @@
 layout: post
 title: Warlords of Ketchup
 ---
-
 To start things off, I want to metion again the guides that Marsh and I wrote. The steps in those guides are very simple to do and should immediately show results. They were created for your benefit. That said, the better you do, the better your raid does. It is a win-win for everybody.
 
 We were able to kill 3 new heroic bosses last week before Shiftless and Marsh went on vacation. That put us at 11/13h and we are very close to a heroic Mannoroth kill. As part of the success, Cenderi, Dad, and Mistytide have been added to the raid team. Make sure to congratulate them!

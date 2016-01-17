@@ -2,7 +2,6 @@
 layout: post
 title: Suggestion for the site and kudos on the boss kills
 ---
-
 First of all, yes, I know the site doesn't look *AMAZING* but my background is development, not design. I'm always game for help or suggestions. 
 
 Below is a list of planned content. Let me know if you have suggestions for more.
