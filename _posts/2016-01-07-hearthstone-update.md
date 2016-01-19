@@ -17,15 +17,7 @@ The idea is to create an atmosphere in our guild where people can take part in t
 Something great happened in the raid this week and we were lucky to have Dam recording at the time. Enjoy this awesome clip.
 
 <div class="embed-responsive embed-responsive-16by9">
-<iframe 
-    src="http://player.twitch.tv/?video=v33862701" 
-    height="315" 
-    width="560" 
-    frameborder="0" 
-    scrolling="no" 
-    allowfullscreen
-    autoplay=false>
-</iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Q_GWik_Tp1I" frameborder="0" allowfullscreen></iframe>
 </div>
 
 
