@@ -1,9 +1,22 @@
-/**
- * parses any RSS/XML feed through Google and returns JSON data
- * source: http://stackoverflow.com/a/6271906/477958
- */
+function mmocNews() {
+  url = document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=';
+  url +=  encodeURIComponent('http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5');
+  $.ajax({
+    url: url,
+    dataType: 'jsonp',
+    success: function(data) {
 
-function sideBar(container) {
+      var counter = 0;
+      $.each(data.responseData.feed.entries, function(key, value) {
+        counter++;
+        document.getElementById("mmo" + counter).href = value.link;
+        document.getElementById("mmo" + counter).innerHTML = '<i class="fa fa-caret-right fa-fw fa-1"></i>' + value.title; 
+      });
+    }
+  });
+}
+
+function wclogs() {
   var base_url = 'https://www.warcraftlogs.com:443/v1';
   var api_key = '4e6b85c57f6b99e30c1e296575957e12';
   var reports_url = base_url + '/reports/guild/Dragon%20Knight/Boulderfist/US?api_key=' + api_key;
@@ -27,7 +40,7 @@ function sideBar(container) {
 
         document.getElementById("link" + counter).href = report_url;
         document.getElementById("title" + counter).innerHTML = title;
-        document.getElementById("day" + counter).innerHTML = "<em>" + dayOfTheWeek + "</em>";
+        document.getElementById("day" + counter).innerHTML = dayOfTheWeek;
         var fight_url = base_url + '/report/fights/' + raid.id + '?api_key=' + api_key;
 
         var div = $("#stats" + counter);
@@ -49,7 +62,6 @@ function sideBar(container) {
                 }
               }
             };
-            console.log(killsDiv.id);
             killsDiv.innerHTML = kills + " Kills";
             wipesDiv.innerHTML = wipes + " Wipes";
           }
@@ -66,21 +78,30 @@ function sideBar(container) {
       // alert("error");
     }
   });
+}
 
-  /* MMO CHAMPION */
-  url = document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=';
-  url +=  encodeURIComponent('http://www.mmo-champion.com/external.php?do=rss&type=newcontent&sectionid=1&days=120&count=5');
-  $.ajax({
+function checkTwitch(container, url) {
+  $.ajax({ 
     url: url,
-    dataType: 'jsonp',
-    success: function(data) {
-
-      var counter = 0;
-      $.each(data.responseData.feed.entries, function(key, value) {
-        counter++;
-        document.getElementById("mmo" + counter).href = value.link;
-        document.getElementById("mmo" + counter).innerHTML = value.title; 
+    dataType:'jsonp',
+    success: function(data) { 
+      var channel = data._links.channel;
+      $.ajax({
+        url: channel,
+        dataType: 'jsonp',
+        success: function(channel_info) {
+          document.getElementById(container).href = channel_info.url;
+        }
       });
+      var status = "OFFLINE";
+      document.getElementById(container).style.background = "#ffe5e5";
+      if (data.stream != null) {
+        status = "LIVE";
+        document.getElementById(container).style.background = "#c5ecc5";
+        document.getElementById(container + "Title").innerHTML = "<em>" + data.stream.channel.status + "<em>";
+        document.getElementById(container + "Game").innerHTML = "Playing <b>" + data.stream.game + "</b>";
+      } 
+      document.getElementById(container + "Status").innerHTML  = status
     }
-  });
+ });
 }

@@ -2,10 +2,10 @@
 layout: post
 title: Less Negativity, More Positivity
 ---
-<h4><u>Thanks Tresane</u></h4>
+<h5><u>Thanks Tresane</u></h5>
 Everybody thank Tresane for taking a little time out of his day to clean up the site a bit and add some color. I tried to add some color but I'm not very good at it and it looked terrible. 
 
-<h4><u>On to the raid talk</u></h4>
+<h5><u>On to the raid talk</u></h5>
 I'd like to welcome our new additions to the raid team. We've had quite a few new people interested in raiding with us and I think it is a great thing. Incorporating them will have its challenges but I think it will be good for our team and guild in the end! 
 
 Negativity and complaints have started to pop up here and there. I know these are minor in the grand scheme of things but I want to get out ahead of them before they turn into something bigger. Let's please keep the overall vibe of the raid positive and fun. We have to continue to work as a team if we want to down more bosses and get more loot. I fully understand that people may have differences of opinions but ultimately the decision will come down to what is better for the raid and the negativity doesn't help in anyway. If you get called out or are calling somebody out, please be constructive about it. Taking things to personally doesn't help. If you see somebody that needs help, help them, don't yell at them.
@@ -16,7 +16,7 @@ As far as composition goes, it's time to start thinking about what we can do bet
 
 Finally, please try and stick with the plan. There are plenty of valid reasons for moving to heroic and I'll try to compromise on that, but we are getting ahead of ourselves if we think we can leave normal completely behind for heroic while we continue to struggle on normal bosses. 
 
-<h4><u>New Tyrant Strat</u></h4>
+<h5><u>New Tyrant Strat</u></h5>
 <div class="embed-responsive embed-responsive-16by9">
   <iframe width="560" height="315" src="http://www.youtube.com/embed/nkLf9thG01w" frameborder="0" allowfullscreen></iframe>
 </div>

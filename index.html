@@ -2,162 +2,45 @@
 layout: default
 title: Home
 ---
-{% assign sorted_streamers = site.data.streamers | sort: 'name' %}
-{% include comment_count.html %}
-<div class="main">
-
-  <!-- <div class="alert alert-danger" role="alert"><a href="/log_guide/"><b>Click here!</b></a> "How Bad Am I?" guide -- Now with <a href="/learn_your_class/">Part 2</a></div> -->
-
-  <a href="/pvp_event/"><div class="jumbotron">
-  </div></a>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="sidebar">
-        <div class="list-group">
-          <a class="list-group-item list-group-header" href="https://www.warcraftlogs.com/guilds/22475">
-            <div class="row">
-              <div class="col-md-12">
-                <b>Recent Raid Logs</b>
-              </div>
-            </div>
-          </a>
-          {% for i in (1..5) %}
-            <a id="link{{ i }}" class="list-group-item">
-              <!-- <div id="title{{ i }}"></div>
-              <div class="row">
-                <div id="day{{ i }}" class="col-md-6"></div>
-                <div id="stats{{ i }}" class="col-md-6"></div>  
-              </div> -->
-              <div class="row">
-                <div class="col-md-6" id="title{{ i }}"></div>
-                <div class="col-md-6 text-right" id="day{{ i }}"></div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 kills" id="kills{{ i }}"></div>
-                <div class="col-md-6 text-right wipes" id="wipes{{ i }}"></div>
-              </div>
-            </a>
-          {% endfor %}
+<!--<div class="row">
+  <a href="/pvp_event/">
+    <div class="jumbotron"></div>
+  </a>
+</div>-->
+<div class="row">
+  <div>
+    {% for post in paginator.posts %}
+      <div class="post">
+        <div class="row">
+          <h4 class="ten columns"><a href="{{post.url}}" class="index-title">{{ post.title }}</a></h4>
+          <time class="two columns" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
         </div>
-      </div>
-      <div class="sidebar">
-        <div class="list-group">
-          <a class="list-group-item list-group-header" href="http://www.mmo-champion.com/content/">
-            <div class="row">
-              <div class="col-md-12">
-                <b>MMO Champion Latest News</b>
-              </div>
-            </div>
-          </a>
-          {% for i in (1..5) %}
-            <a class="list-group-item" id="mmo{{ i }}"></a>
-          {% endfor %}
+        <!-- <p class="post-date">{{ post.date | date_to_string }}</p> -->
+        <div class="post-content-truncate">
+          {% if post.content contains "<!-- more -->" %}
+            {{ post.content | split:"<!-- more -->" | first % }}
+          {% else %}
+            {{ post.content | truncatewords:100 }}
+          {% endif %}
         </div>
-      </div>
-    </div>
-
-    <script type="text/javascript">
-      $(function(){
-        sideBar('#news');
-      });
-    </script>
-
-    <div class="col-md-6">
-      {% for post in paginator.posts %}
-      <div class="panel-group">
-        <div class="panel panel-default">
-          <div class="panel-heading"> 
-            <h1 class="panel-title">
-              <a href="{{ post.url }}">
-                {{ post.title }}
-              </a>
-            </h1>
-
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }} • </time>
-            <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{post.url}}"></a>
-          </div>
-          <div class="panel-body">
-            {{ post.content }}
-          </div>
+        <div style="text-align: right;">
+          <a href="{{post.url}}">read more..</a>
         </div>
+        </br>
       </div>
-      {% endfor %}
-
-      <div>
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default" role="button">Older</a>
-      {% else %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default disabled" role="button">Older</a>
-      {% endif %}
-      
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default" role="button">Newer</a>
-      {% else %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default disabled" role="button">Newer</a>
-      {% endif %}
-      </div>
-    </div>
-    
-    <div class="col-md-3">
-      <div class="list-group">
-        <span class="list-group-item list-group-header"><b>Stream Status</b></span>
-        {% for streamer in sorted_streamers %}
-        <a id="{{ streamer.name }}" class="list-group-item" href="404.html">
-          <div class="row">
-            <div class="col-md-6">{{ streamer.name }}</div>
-            <div class="col-md-6 text-right" id="{{ streamer.name }}Status"></div>
-          </div>
-          <div class="row" id="stream">
-            <div class="col-md-12" id="{{ streamer.name }}Title"></div>
-          </div>
-          <div class="row" id="stream">
-            <div class="col-md-12" id="{{ streamer.name }}Game"></div>
-          </div>
-        </a>
-        {% endfor %}
-      </div>
-      <div>
-        <h4><a href="/archive/">Archive</a></h4>
-
-        {% for post in site.posts  %}
-            {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-            {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
-            {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
-            {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
-
-            {% if forloop.first %}
-            <h5 id="{{ this_year }}-ref">{{this_year}}</h5>
-            <h6 id="{{ this_year }}-{{ this_month }}-ref">{{ this_month }}</h6>
-            <ul>
-            {% endif %}
-
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-
-            {% if forloop.last %}
-            </ul>
-            {% else %}
-                {% if this_year != next_year %}
-                </ul>
-                <h5 id="{{ next_year }}-ref">{{next_year}}</h5>
-                <h6 id="{{ next_year }}-{{ next_month }}-ref">{{ next_month }}</h6>
-                <ul>
-                {% else %}    
-                    {% if this_month != next_month %}
-                    </ul>
-                    <h6 id="{{ this_year }}-{{ next_month }}-ref">{{ next_month }}</h6>
-                    <ul>
-                    {% endif %}
-                {% endif %}
-            {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-   
-    <script type="text/javascript">
-      $(function(){
-        getStatus();
-      });
-    </script>
+    {% endfor %}
+  </div>
+  <div>
+  {% if paginator.next_page %}
+    <a class="button" href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default" role="button"><i class="fa fa-angle-double-left fa-fw"></i>Older</a>
+  {% else %}
+    <a class="button diabled" href="{{ paginator.next_page_path | prepend: site.baseurl }}" role="button"><i class="fa fa-angle-double-left fa-fw"></i>Older</a>
+  {% endif %}
+  
+  {% if paginator.previous_page %}
+    <a class="button u-pull-right" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" role="button">Newer<i class="fa fa-angle-double-right fa-fw"></i></a>
+  {% else %}
+    <a class="button u-pull-right disabled" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" role="button">Newer<i class="fa fa-angle-double-right fa-fw"></i></a>
+  {% endif %}
   </div>
 </div>
-

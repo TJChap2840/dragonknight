@@ -1,31 +1,59 @@
 ---
-layout: page
+layout: default
 title: PvP Event
 ---
 
 <script type="text/javascript">
   // $(document).ready(
-  // function(){
+  // function() {
   //   var contestants = [];
   //   var players = [];
   //   {% for player in site.data.pvp_event %}
-  //       var name = "{{player.name}}";
-  //       var server = "{{player.server}}";
-  //       var starting = "{{player.starting_hk}}"
-  //       contestants.push({name: name, server: server, starting: starting});
+  //     var name = "{{player.player}}";
+  //     var starting = "{{player.starting}}";
+  //     var server = "{{player.server}}";
+  //     var main = "{{player.main}}";
+  //     // var json = '{name:' + name + ',';
+  //     // json += 'starting:' + starting + ',';
+  //     // json += 'server:' + server + ',';
+  //     // json += 'main:' + main + '"}';
+  //     // console.log(json);
+  //     contestants.push({name: name, starting: starting, server: server, main: main});
   //   {% endfor %}
 
   //   for (var i = 0; i < contestants.length; i++) {
+  //     // console.log(contestants[i]);
   //     var name = contestants[i].name;
   //     var server = contestants[i].server;
+  //     var main = contestants[i].main;
+  //     // console.log(name);
   //     var url = "https://us.api.battle.net/wow/character/" + server + "/" + name  + "?fields=pvp&locale=en_US&apikey=3tgfhwvjya9h9kpekjdyz45q3uhj2978";
   //     var data = $.parseJSON($.ajax({
   //       url: url,
   //       dataType: 'json',
   //       async: false
   //     }).responseText);
-  //     var weekend_kills = data.totalHonorableKills - contestants[i].starting;
-  //     players.push({name: data.name, kills: weekend_kills});
+  //     var weekend_kills = data.totalHonorableKills - parseInt(contestants[i].starting);
+  //     // console.log(players[]);
+  //     // players.push({name: main, kills: weekend_kills});
+  //     var found = 0;
+  //     for (var player in players) {
+  //       var playerName = players[player].name;
+  //       var playerKills = players[player].kills;
+  //       // console.log(main + " " + players[player].name);
+  //       if (players[player].name == main) {
+  //         // console.log("Found Match: " + playerName + " " + main);
+  //         // console.log("Kills: " + playerKills); 
+  //         found = 1;
+  //         playerKills = playerKills + weekend_kills;
+  //         players[player].kills = playerKills;
+  //         // console.log(players[name]);
+  //       }
+  //     }
+
+  //     if (found == 0) {
+  //       players.push({name: main, kills: weekend_kills});
+  //     }
   //   }
 
   //   var sortable = [];
@@ -37,42 +65,43 @@ title: PvP Event
   //   for (var i = 0; i < sortable.length; i++) {
   //     var playerName = sortable[i][0];
   //     var playerHK = sortable[i][1];
-  //     innerHTML += "<tr><td>" + (i+1) + ".</td><td>" + playerName + "</td><td>" + playerHK + "</td></tr>";
+  //     innerHTML += "<tr><td>" + (i+1) + "</td><td style='min-width: 400px;'>" + playerName + "</td><td>" + playerHK + "</td></tr>";
   //   }
-  //   console.log(innerHTML);
+  //   // console.log(innerHTML);
   //   $("#leaderboard").html(innerHTML);
   // });
 </script>
 
-
-<div class="col-md-8 col-md-offset-2">
-  <h1>Honorable Kill Event</h1>
-  <h3>Date:</h3>
-  <ul>
-    <li>Feb 3rd to Feb 8th</li>
-    <li>Week of Bonus Honor Event</li>
-    <li>Sign up on guild calendar</li>
-  </ul>
-  <h3>Format:</h3>
-  <ul>
-    <li>Winner gets to change the guild tabard and temporarily gets a special guild rank</li>
-    <li>2nd and 3rd get a special guild rank</li>
-    <li>Honorable kills will be recorded when event starts</li>
-  </ul>
-  <h3>Rules:</h3>
-  <ul>
-    <li>The rules are simple. Get as many honorable kills as you can during the event</li>
-    <li>Check back here often to see the leaderboard</li>
-  </ul>
+<div class="row">
+  <div class="eight columns offset-by-two post">
+    <h4>Honorable Kill Event</h4>
+    <b>Date:</b>
+    <ul>
+      <li>Feb 5th to Feb 7th (7PM Start and Finish)</li>
+      <li>Week of Bonus Honor Event</li>
+      <li>Sign up on guild calendar</li>
+    </ul>
+    <b>Format:</b>
+    <ul>
+      <li>Winner gets to change the guild tabard and temporarily gets a special guild rank</li>
+      <li>2nd and 3rd get a special guild rank</li>
+      <li>Honorable kills will be recorded when event starts</li>
+      <li>You can compete with multiple characters</li>
+    </ul>
+    <b>Rules:</b>
+    <ul>
+      <li>The rules are simple. Get as many honorable kills as you can during the event</li>
+      <li>Check back here often to see the leaderboard</li>
+    </ul>
+  </div>
 </div>
 
-<div class="row col-md-8 col-md-offset-2">
-  <div class="panel panel-default" hidden>
-    <div class="panel-heading"><h1 class="panel-title">Honorable Kills Event Leaderboard</h1></div>
+<div class="row">  
+  <div class="eight columns offset-by-two post">
+    <h4>Honorable Kills Event Leaderboard</h4>
     <table class="table">
       <tbody id="leaderboard">
       </tbody>
     </table>
-    </div>
   </div>
 </div>
