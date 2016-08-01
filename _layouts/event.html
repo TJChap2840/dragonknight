@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{% if page.image-banner %} 
+<div class="banner banner--{{ page.image-banner }}">
+            
+        
+</div>
+{% endif %}
+<div class="main">
+    <div class="main_contents">
+        
+        <article>
+            <h1>{{ page.title }}</h1>
+            <h5 class="article__date">Published {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} by {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</h5>
+            <p class="lead">{{ page.description }}</p>
+            <p>{{ content }}</p>
+        </article>
+        <aside>
+            <h3>Event Info</h3>
+           
+        </aside>
+    </div>
+</div>

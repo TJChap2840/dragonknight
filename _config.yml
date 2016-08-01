@@ -1,0 +1,26 @@
+# Site settings
+title: Dragon Knight
+email: dkboulderfist@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  World of Warcraft Guild Site..
+subject: Gaming Blizzard Warcraft
+classification: Gaming and Entertainment
+author: 
+designer: 
+replyto: 
+themecolor: 22274d
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://dk.chapley.com" # the base hostname & protocol for your site
+
+permalink: pretty
+
+paginate: 3
+
+# Build settings
+markdown: kramdown
+
+#gems
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+

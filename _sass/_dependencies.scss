@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'fira_reg';
+    src:
+    url('/media/fonts/FiraSans-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+    url('/media/fonts/FiraSans-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'fira_light';
+    src:
+    url('/media/fonts/FiraSans-Light.woff') format('woff'), /* Pretty Modern Browsers */
+    url('/media/fonts/FiraSans-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'fira_bold';
+    src:
+    url('/media/fonts/FiraSans-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+    url('/media/fonts/FiraSans-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+// fonts
+$sans-serif: 'fira_reg',
+arial,
+sans-serif; // light 300, reg 400, medium 500, semibold 600
+$serif: 'fira_bold',
+Georgia,
+serif; // light 300, book 400, regular 500
+// pretty colors
+
+
+    $fira-reg:          'fira_reg', arial, sans-serif;//
+    $fira-light:        'fira_light', sans-serif;//
+    $fira-bold:         'fira_bold', arial, sans-serif;//
+
+$primary-color: #C99700;
+$secondary-color: #C99700;
+
+$dk-gold: #C99700;
+$dk-red: #681918;
+$dk-red-dark: #591716;
+$dk-gold-dark: #906B1E;
+
+$primary-font: rgba(255,255,255,0.95); // p,li color in main content
+$secondary-font: rgba(255,255,255,0.75); // p,li color in portlet/sidebar
+$tertiary-font: #A6A6A6; // summary, discreet
+
+
+$main-bg:  #0C0E10;
+$secondary-bg: #1D1F21;
+$bg-color: #F5F1E9; // background
+$dark-bg:  #1C273C;
+
+$borders: #C8C7CC; // border color
+
+$nav-active: #fff;
+
+$a-link: $primary-color;
+$a-hover: $secondary-color;
+
+$blue: #016FC4;
+
+
+// mixins
+@mixin breakpoint($point) {
+    @if $point==hdres {
+        @media (max-width:1600px){
+            @content ;
+        }
+    }
+    @if $point==desktop {
+        @media (max-width: 1250px) {
+            @content ;
+        }
+    }
+    @else if $point==laptop {
+        @media (max-width: 1000px) {
+            @content ;
+        }
+    }
+    @else if $point==rufus {
+        @media (max-width: 850px) {
+            @content ;
+        }
+    }
+    @else if $point==tablet {
+        @media (max-width: 750px) {
+            @content ;
+        }
+    }
+    @else if $point==mobileonly {
+        @media (max-width: 640px) {
+            @content ;
+        }
+    }
+    @else if $point==smallmobile {
+        @media (max-width: 450px) {
+            @content ;
+        }
+    }
+}
+
+@mixin transitiontime {
+    transition-delay: 0s;
+    transition-duration: 0.75s;
+    transition-property: all;
+    transition-timing-function: ease;
+    -webkit-transition-delay: 0s;
+    -webkit-transition-duration: 0.75s;
+    -webkit-transition-property: all;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-delay: 0s;
+    -moz-transition-duration: 0.75s;
+    -moz-transition-property: all;
+    -moz-transition-timing-function: ease;
+}
+
+
+@mixin transition($values: 0.3s ease-in) {
+    transition: $values;
+    -webkit-transition: $values;
+    -webkit-transform: translateZ(0); // Fix animation in Safari
+}
+
+@mixin container {
+    width: 80%;
+    margin: 0 auto;
+    min-width: 300px;
+    @include breakpoint(rufus) {
+      width:85%;
+    }
+    @include breakpoint(mobileonly) {
+        width: 90%;
+    }
+}

@@ -1,46 +1,69 @@
 ---
 layout: default
-title: Home
+title: Dragon Knight @ Boulderfist
 ---
-<!--<div class="row">
-  <a href="/pvp_event/">
-    <div class="jumbotron"></div>
-  </a>
-</div>-->
-<div class="row">
-  <div>
-    {% for post in paginator.posts %}
-      <div class="post">
-        <div class="row">
-          <h4 class="ten columns"><a href="{{post.url}}" class="index-title">{{ post.title }}</a></h4>
-          <time class="two columns" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
-        </div>
-        <!-- <p class="post-date">{{ post.date | date_to_string }}</p> -->
-        <div class="post-content-truncate">
-          {% if post.content contains "<!-- more -->" %}
-            {{ post.content | split:"<!-- more -->" | first % }}
-          {% else %}
-            {{ post.content | truncatewords:100 }}
-          {% endif %}
-        </div>
-        <div style="text-align: right;">
-          <a href="{{post.url}}">read more..</a>
-        </div>
-        </br>
-      </div>
-    {% endfor %}
+<script type="text/javascript">
+    $(function(){
+      wclogs();
+    });
+  </script>
+<div class="video__wrapper">
+  <div class="video__source">
+    <video autoplay muted loop poster="/media/dk-video.jpg" id="bgvid">
+    <source src="/media/dk-video2.webm" type="video/webm">
+    <source src="/media/dk-video2.mp4" type="video/mp4">
+</video>
   </div>
-  <div>
-  {% if paginator.next_page %}
-    <a class="button" href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="col-md-6 btn btn-default" role="button"><i class="fa fa-angle-double-left fa-fw"></i>Older</a>
-  {% else %}
-    <a class="button diabled" href="{{ paginator.next_page_path | prepend: site.baseurl }}" role="button"><i class="fa fa-angle-double-left fa-fw"></i>Older</a>
-  {% endif %}
-  
-  {% if paginator.previous_page %}
-    <a class="button u-pull-right" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" role="button">Newer<i class="fa fa-angle-double-right fa-fw"></i></a>
-  {% else %}
-    <a class="button u-pull-right disabled" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" role="button">Newer<i class="fa fa-angle-double-right fa-fw"></i></a>
-  {% endif %}
+  <div class="video__contents">
+    <h3>Recent Logs</h3>
+    <div class="log__wrapper">
+    {% for i in (1..5) %}
+    <a class="log__item" id="link{{ i }}">
+        <p class="log--date" id="day{{ i }}"></p>
+        <p class="log--title" id="title{{ i }}"></p>
+        <p class="log--stats" id="stats{{ i }}"></p>
+    </a>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="main__wrapper">
+  <div class="main__goods">
+    <div class="row">
+            <div class="six columns">
+                <h1 class="sectionheader">News</h1> {% for post in site.categories.news limit:3 %}
+                <div class="news__thumb">
+                    <h2 class="news--title">
+                      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                    </h2>
+                    <p class="news--date">{{ post.date | date: "%b %-d, %Y" }}</p>
+                    <p class="news--summary">{{ post.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="six columns homepage--right">
+                {% for post in site.categories.event limit:1 %}
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                    <div class="featureditem">
+                    <h2>
+                      {{ post.title }}
+                    </h2>
+                        <img src="{{ post.image }}.jpg" alt="{{ post.image-caption }}" srcset="{{ post.image }}.jpg 1x, {{ post.image }}@2x.jpg 2x">
+                         <div class="featureditem__card"><p>{{ post.description }}</p></div>
+
+                    </div>
+                </a>
+                {% endfor %}
+                <p>
+                    <a class="btn btn--big btn--gold" href="#">Event Calendar</a>
+                </p>
+                <p>
+                    <a class="btn btn--big btn--gold" href="#">About Us</a>
+                </p>
+                <p>
+                    <a class="btn btn--big btn--gold" href="#">Resources</a>
+                </p>
+            </div>
+        </div>
   </div>
 </div>

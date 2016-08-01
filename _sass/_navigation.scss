@@ -1,0 +1,42 @@
+nav {
+    border: 2px solid #fff;
+    background: rgba(0,0,0,0.40);
+    width:49%;
+    margin: 0 auto;
+    z-index: 89;
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+    border-radius:2px;
+    @include breakpoint(desktop) {
+      width:59%;
+    }
+    @include breakpoint(laptop) {
+      width:77%;
+    }
+    @include breakpoint(rufus) {
+      width:90%;
+    }
+    ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        justify-content: space-between;
+        li {
+            display: inline-block;
+            list-style: none;
+            a {
+                padding: 10px 20px;
+                display: block;
+                color: #fff;
+                font-size:1.8rem;
+                font-family: $fira-bold;
+                &:hover {
+                    color: $primary-color;
+                    background-color: rgba(255,255,255,0.1);
+                }
+            }
+        }
+    }
+}
