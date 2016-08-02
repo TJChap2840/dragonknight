@@ -42,15 +42,15 @@ title: Dragon Knight @ Boulderfist
                 {% endfor %}
             </div>
             <div class="six columns homepage--right">
+              <h1 class="sectionheader">Next Event</h1>
                 {% for post in site.categories.event limit:1 %}
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
                     <div class="featureditem">
-                    <h2>
-                      {{ post.title }}
-                    </h2>
                         <img src="{{ post.image }}.jpg" alt="{{ post.image-caption }}" srcset="{{ post.image }}.jpg 1x, {{ post.image }}@2x.jpg 2x">
-                         <div class="featureditem__card"><p>{{ post.description }}</p></div>
-
+                        <h2>
+                          {{ post.title }}
+                        </h2>
+                         <p>{{ post.description }}</p>
                     </div>
                 </a>
                 {% endfor %}
