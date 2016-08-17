@@ -92,6 +92,9 @@ p {
     font-size: 1.6rem;
     font-family: $fira-reg;
     color: $primary-font;
+    aside & {
+      font-size:1.4rem;
+    }
     &.log--date {
       margin-top:0px;
       margin-bottom:0px;

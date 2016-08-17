@@ -3,24 +3,26 @@ layout: page
 title: Calendar
 ---
 
-<script type='text/javascript'>
+<article>
+  <script type='text/javascript'>
 
-$(document).ready(function() {
-    $('#calendar').fullCalendar({
-        googleCalendarApiKey: 'AIzaSyBK7sAkF4XuftwyD8HtllVZm6Iv7825hbU',
-        eventSources: [
-          {
-              googleCalendarId: 'dkboulderfist@gmail.com',
-              color: 'blue'
-          },
-          {
-            googleCalendarId: 'o0iuhh0v3jl3t5fj7e58cumblo@group.calendar.google.com',
-            color: 'green'
-          }
-        ]
-    });
-});
+  $(document).ready(function() {
+      $('#calendar').fullCalendar({
+          googleCalendarApiKey: 'AIzaSyBK7sAkF4XuftwyD8HtllVZm6Iv7825hbU',
+          eventSources: [
+            {
+                googleCalendarId: 'dkboulderfist@gmail.com',
+                color: 'blue'
+            },
+            {
+              googleCalendarId: 'o0iuhh0v3jl3t5fj7e58cumblo@group.calendar.google.com',
+              color: 'green'
+            }
+          ]
+      });
+  });
 
-</script>
+  </script>
 
-<div id='calendar'></div>
+  <div id='calendar'></div>
+</article>
