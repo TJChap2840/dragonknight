@@ -250,12 +250,12 @@ canvas.addEventListener('mouseup', function(event) {
 });
 
 function newGame() {
-  var filled = [];
+  filled = [];
   for (var i = 1; i < squaresPerRow * squaresPerRow; i++) {
     filled[i] = false;
   }
 
-  var phrases = [ "FREE SPACE", "Skifree complains", "Varos types a paragraph", "Someone accuses Dam of being a loot ninja",
+  phrases = [ "FREE SPACE", "Skifree complains", "Varos types a paragraph", "Someone accuses Dam of being a loot ninja",
                   "Mothrgoose dies", "Dam ninja loots", "5 people talk at the same time", "Down a boss on the first pull",
                   "Someone whines about loot", "Alkrym joins the raid", "Crians says something helpful", "Mishakal dies",
                   "Vert lurks in the discord channel", "Officers discuss loot", "Cut the raid from 30 to 20 people", "Alastar dies",
