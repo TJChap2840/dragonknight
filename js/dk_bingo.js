@@ -12,12 +12,17 @@ canvas.width = canvasSize;
 canvas.height = canvasSize +50;
 
 var filled = [];
-var phrases = [];
-phrases[0] = "Free Space";
 for (var i = 1; i < squaresPerRow * squaresPerRow; i++) {
   filled[i] = false;
-  phrases[i] = i;
 }
+
+var phrases = [ "FREE SPACE", "Skifree complains", "Varos types a paragraph", "Someone accuses Dam of being a loot ninja",
+                "Mothrgoose dies", "Dam ninja loots", "5 people talk at the same time", "Down a boss on the first pull",
+                "Someone whines about loot", "Alkrym joins the raid", "Crians says something helpful", "Mishakal dies",
+                "Vert lurks in the discord channel", "Officers discuss loot", "Cut the raid from 30 to 20 people", "Alastar dies",
+                "Kor whistles dixie over discord through his nose", "Someones dog barks over the mice", "Crians pulls a 'Crians'",
+                "Sapph tells somenone off", "Dragon references his other, better mythic guild", "Call a wipe; Down the boss anyway",
+                "Rico and Amber go for a smoke", "Kill boss with personal loot on", "Kaskade says cognizant"];
 phrases = shuffle(phrases);
 
 var font = "12px Georgia";
@@ -41,7 +46,7 @@ function drawBoard() {
 
   context.fillStyle="#aaa";
   context.fillRect(newGameButton.x, newGameButton.y, newGameButton.width, newGameButton.height);
-  addPhrase("Reset Game", (canvasSize/2), canvasSize+30);
+  addPhrase("Reset Game", (canvasSize/2), canvasSize+30, canvasSize);
 }
 
 function drawLines() {
@@ -78,17 +83,35 @@ function populateBoard() {
   for(var x = 0; x < squaresPerRow; x++) {
     for(var y = 0; y < squaresPerRow; y++) {
       var currentSquare = (x*squaresPerRow)+y;
-      addPhrase(phrases[currentSquare], (x*squareSize)+(squareSize/2), (y*squareSize)+(squareSize/2));
+      console.log(currentSquare);
+      addPhrase(phrases[currentSquare], (x*squareSize)+(squareSize/2), (y*squareSize)+(squareSize/2), squareSize - 20);
     }
   }
 }
+var y = 60;
+function addPhrase(phrase, x, y, maxWidth) {
+  var words = phrase.split(' ');
+  var line = '';
+  var lineHeight = 15;
 
-function addPhrase(phrase, x, y) {
-  context.font = "12px Georgia";
-  context.textAlign = "center";
-  context.textBaseLine = "middle";
-  context.fillStyle = "#000";
-  context.fillText(phrase, x, y);
+  context.font = font;
+  context.textAlign = textAlign;
+  context.textBaseLine = textBaseLine
+  context.fillStyle = fillStyle;
+
+  for(var i = 0; i < words.length; i++) {
+    var testLine = line + words[i] + " ";
+    var metrics = context.measureText(testLine);
+    var testWidth = metrics.width;
+    if (testWidth > maxWidth && i > 0) {
+      context.fillText(line, x, y);
+      line = words[i] + " ";
+      y += lineHeight;
+    } else {
+      line = testLine;
+    }
+  }
+  context.fillText(line, x, y);
 }
 
 function drawSquare(color, x, y, width, height) {
@@ -141,7 +164,7 @@ function shuffle(array) {
     array[randomIndex] = temporaryValue;
   }
 
-  var freeSpace = array.indexOf("Free Space");
+  var freeSpace = array.indexOf("FREE SPACE");
   var middleSpace = Math.ceil(squaresPerRow*squaresPerRow/2)-1;
   var temp = array[middleSpace];
   array[middleSpace] = array[freeSpace];
@@ -211,8 +234,8 @@ function uploadToImgur() {
       dataType: 'json',
       success: function(response) {
           if(response.success) {
-              window.location = response.data.link;
-              // console.log(response.data.link);
+              window.open(response.data.link, '_blank');
+              prompt("Copy this in case pop-up blocker blocked redirect to the image", response.data.link);
           }
       }
   });
