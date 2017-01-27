@@ -250,15 +250,19 @@ canvas.addEventListener('mouseup', function(event) {
 });
 
 function newGame() {
-  filled = [];
-  phrases = [];
-  phrases[0] = "Free Space";
+  var filled = [];
   for (var i = 1; i < squaresPerRow * squaresPerRow; i++) {
     filled[i] = false;
-    phrases[i] = i;
   }
-  phrases = shuffle(phrases);
 
+  var phrases = [ "FREE SPACE", "Skifree complains", "Varos types a paragraph", "Someone accuses Dam of being a loot ninja",
+                  "Mothrgoose dies", "Dam ninja loots", "5 people talk at the same time", "Down a boss on the first pull",
+                  "Someone whines about loot", "Alkrym joins the raid", "Crians says something helpful", "Mishakal dies",
+                  "Vert lurks in the discord channel", "Officers discuss loot", "Cut the raid from 30 to 20 people", "Alastar dies",
+                  "Kor whistles dixie over discord through his nose", "Someones dog barks over the mice", "Crians pulls a 'Crians'",
+                  "Sapph tells somenone off", "Dragon references his other, better mythic guild", "Call a wipe; Down the boss anyway",
+                  "Rico and Amber go for a smoke", "Kill boss with personal loot on", "Kaskade says cognizant"];
+  phrases = shuffle(phrases);
   drawBoard();
 }
 
